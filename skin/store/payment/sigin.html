@@ -1,0 +1,75 @@
+<div class="gcss-wrapper">
+  <section class="bdr_content payment_frm clear">
+    <header><h2 class=icon-customer>{LNG_CUSTOMER_LOGIN_TITLE}</h2></header>
+    <form id=payment_login_frm method=post action=index.php>
+      <fieldset>
+        <legend><span>{LNG_CUSTOMER_LOGIN_COMMENT}</span></legend>
+        <div class=item>
+          <label for=payment_login_email>{LNG_EMAIL}</label>
+          <span class="g-input icon-email"><input type=text name=payment_login_email id=payment_login_email maxlength=255 data-result=result_login></span>
+        </div>
+        <div class=item>
+          <label for=payment_login_password>{LNG_PASSWORD}</label>
+          <span class="g-input icon-password"><input type=password name=payment_login_password id=payment_login_password maxlength=20 data-result=result_login></span>
+        </div>
+        <div class=comment id=result_login></div>
+      </fieldset>
+      <fieldset class="submit right">
+        <input type=submit class="button large ok" value="{LNG_LOGIN}">
+        <input type=hidden name=module value={MODULE}>
+      </fieldset>
+    </form>
+  </section>
+  <section class="bdr_content clear payment_frm {FACEBOOK}">
+    <header><h2 class=icon-facebook>{LNG_FACEBOOK}</h2></header>
+    <fieldset>
+      <legend><span>{LNG_FACEBOOK_LOGIN_COMMENT}</span></legend>
+      <div class="center facebook padding-top-bottom"><a class="icon-facebook blue button" id=payment_fb>{LNG_FACEBOOK_LOGIN}</a></div>
+    </fieldset>
+  </section>
+  <section class="bdr_content payment_frm clear">
+    <header><h2 class=icon-register>{LNG_REGISTER}</h2></header>
+    <form id=payment_profile_frm method=post action=index.php autocomplete=off>
+      <fieldset>
+        <legend class=register><span>{LNG_CUSTOMER_REGISTER}</span></legend>
+        <div class=item>
+          <label for=payment_email>{LNG_EMAIL}</label>
+          <span class="g-input icon-email"><input type=text name=payment_email id=payment_email maxlength=255 title="{LNG_REGISTER_EMAIL_COMMENT}"></span>
+        </div>
+        <div class=comment id=result_payment_email>{LNG_REGISTER_EMAIL_COMMENT}</div>
+        <div class=item>
+          <label for=payment_password>{LNG_PASSWORD}</label>
+          <span class="g-input icon-password"><input type=password name=payment_password id=payment_password maxlength=20 title="{LNG_PASSWORD_COMMENT}"></span>
+        </div>
+        <div class=comment id=result_payment_password>{LNG_PASSWORD_COMMENT}</div>
+        <div class=item>
+          <label for=payment_repassword>{LNG_REPASSWORD}</label>
+          <span class="g-input icon-password"><input type=password name=payment_repassword id=payment_repassword maxlength=20 title="{LNG_REPASSWORD_COMMENT}"></span>
+        </div>
+        <div class=comment id=result_payment_repassword>{LNG_REPASSWORD_COMMENT}</div>
+        <div class=item>
+          <label class="g-input antispam">
+            <span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=Antispam></span>
+            <input type=text name=payment_antispam id=payment_antispam maxlength=4 value="{ANTISPAMCHAR}" placeholder="{LNG_ANTISPAM_COMMENT}">
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="submit right">
+        <input type=submit class="button large ok" value="{LNG_CONTINUE}">
+        <input type=hidden name=antispam value={ANTISPAM}>
+        <input type=hidden name=module value={MODULE}>
+        <input type=hidden id=payment_id value=0>
+      </fieldset>
+    </form>
+  </section>
+  <script>
+    $G(window).Ready(function () {
+      new GForm("payment_login_frm", "{WEBURL}/modules/payment/chklogin.php", "wait", false).onsubmit(doFormSubmit);
+      new GForm("payment_profile_frm", "{WEBURL}/modules/payment/newregister.php", "wait", false).onsubmit(doFormSubmit);
+      new GValidator('payment_email', 'keyup,change', checkEmail, '{WEBURL}/modules/member/checkemail.php', null, 'payment_profile_frm');
+      new GValidator('payment_password', 'keyup,change', checkPassword);
+      new GValidator('payment_repassword', 'keyup,change', checkPassword);
+      $G('payment_fb').addEvent('click', fbLogin);
+    });
+  </script>
+</div>

@@ -1,0 +1,23 @@
+<?php die('File not found !')?>
+define('DB_GALLERY', PREFIX.'_gallery');
+define('DB_GALLERY_ALBUM', PREFIX.'_gallery_album');
+DROP TABLE IF EXISTS `{prefix}_gallery`;
+CREATE TABLE IF NOT EXISTS `{prefix}_gallery` (`id` int(11) unsigned NOT NULL auto_increment,`module_id` int(11) unsigned NOT NULL,`album_id` int(11) unsigned NOT NULL,`image` varchar(15) collate utf8_unicode_ci NOT NULL,`last_update` int(11) unsigned NOT NULL,`count` int(11) unsigned NOT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+DROP TABLE IF EXISTS `{prefix}_gallery_album`;
+CREATE TABLE IF NOT EXISTS `{prefix}_gallery_album` (`id` int(11) unsigned NOT NULL auto_increment,`module_id` int(11) unsigned NOT NULL,`topic` varchar(64) collate utf8_unicode_ci NOT NULL,`detail` varchar(200) collate utf8_unicode_ci NOT NULL,`last_update` int(11) unsigned NOT NULL,`count` int(11) unsigned NOT NULL,`visited` int(11) unsigned NOT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+DELETE FROM `{prefix}_language` WHERE `owner`='gallery';
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('GALLERY_CONFIRM_ALBUM_DELETE','text','gallery','1','คุณต้องการจะลบอัลบัมนี้ และรูปภาพภายในอัลบัมนี้ทั้งหมด ?');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_ALBUM','text','gallery','0','อัลบัม');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_ALBUM_COMMENT','text','gallery','0','กรอกชื่อของอัลบัมภาพ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_ALBUM_DESCRIPTION_COMMENT','text','gallery','0','กรอกคำอธิบายสั้นๆเกี่ยวกับรูปภาพหรืออัลบัมภาพนี้');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_ALBUM_DETAIL','text','gallery','0','รายละเอียดของอัลบัม');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_DETAILS','text','gallery','0','รายละเอียดเกี่ยวกับรูปภาพ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_DISPLAY_COMMENT','text','gallery','0','จำนวนรูปภาพแสดงต่อหน้า (แถวและสดมภ์)');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_PICTURE','text','gallery','0','ภาพปกของอัลบัม');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_SIZE_COMMENT','text','gallery','0','ขนาดของรูปภาพที่ถูกจัดเก็บเป็นพิกเซล รูปภาพจะถูกปรับขนาดตามที่กำหนดโดยอัตโนมัติ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_THUMB_WIDTH_COMMENT','text','gallery','0','ขนาดของรูปภาพขนาดเล็ก (Thumbnail) ที่จะแสดงในหน้าอัลบัมและแกลอรี่ (พิกเซล) ซึ่งจะถูกปรับขนาดอัตโนมัติ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_UPLOAD','text','gallery','0','อัปโหลดรูปภาพลงในอัลบัม');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_GALLERY_UPLOAD_COMMENT','text','gallery','0','รูปภาพอัปโหลด {TYPE} ขนาดไม่เกิน {SIZE} Kb. ครั้งละไม่เกิน {COUNT} รูป (ถ้าคุณใช้เน็ตความเร็วต่ำไม่ควรอัปโหลดเกินครั้งละ 5 รูป)');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_IMAGE_COUNT','text','gallery','0','จำนวนรูปในอัลบัมนี้');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_IMAGE_UPLOAD_RESIZE_COMMENT','text','gallery','0','อัปโหลดรูปภาพ รูปภาพที่มีขนาดที่ใหญ่กว่าที่กำหนดจะถูกปรับขนาดโดยอัตโนมัติ (ถ้าต้องการใช้รูปภาพเคลื่อนไหวหรือโปร่งใส กรุณาเตรียมรูปภาพให้พอดีกับขนาดที่กำหนด)');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_UPLOAD_CANCLE','text','gallery','0','ยกเลิกการอัปโหลด');

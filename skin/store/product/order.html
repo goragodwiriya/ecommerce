@@ -1,0 +1,56 @@
+<div class="gcss-wrapper">
+  <article class="member_section padding-top-bottom">
+    <header><h2 class=icon-cart>{LNG_ORDER_NO} {ORDERID} {LNG_TRANSACTION_ON} {DATE}</h2></header>
+    <table class="cart fullwidth">
+      <caption>{LNG_ORDER_DETAIL}</caption>
+      <thead>
+        <tr>
+          <th>{LNG_PRODUCT_ID}</th>
+          <th>{LNG_PRODUCT_TOPIC}</th>
+          <th class=center>{LNG_QUANTITY}</th>
+          <th class=center>{LNG_PRICE}</th>
+          <th class=center>{LNG_TOTAL}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {CART}
+      </tbody>
+      <tfoot>
+        <tr class=right>
+          <td colspan=3>{LNG_TOTAL}</td><td class=right colspan=2>{TOTAL} {UNIT}</td>
+        </tr>
+        <tr class=right>
+          <td colspan=3>{LNG_TAX}</td><td class=right colspan=2>{TAX} {UNIT}</td>
+        </tr>
+        <tr class=right>
+          <td colspan=3>{LNG_VAT}</td><td class=right colspan=2>{VAT} {UNIT}</td>
+        </tr>
+        <tr class=right>
+          <td colspan=3>{LNG_DISCOUNT}</td><td class=right colspan=2>{DISCOUNT} {UNIT}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <table class="payment fullwidth">
+      <caption>{LNG_PAYMENT_SUMMARY}</caption>
+      <tbody>
+        <tr class=bg1>
+          <td>{LNG_PAYMENT_STATUS}</td><td class=right>{STATUS}</td>
+        </tr>
+        <tr class=bg2>
+          <td>{LNG_AMOUNT}</td><td class=right>{PAID} {UNIT}</td>
+        </tr>
+        <tr class=bg1>
+          <td>{LNG_PAYMENT_METHOD}</td><td class=right>{METHOD}</td>
+        </tr>
+        <tr class=bg2>
+          <td>{LNG_POSTCODE}</td><td class=right>{POSTCODE}</td>
+        </tr>
+        <tr class=bg1>
+          <td>{LNG_PAYMENT_DETAIL}</td>
+          <td class=right>{DETAIL}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class=right><a href="{URL_PAYMENT}" class="{PAYMENT} button large ok" id=cart_checkout>{LNG_CHECKOUT}</a></p>
+  </article>
+</div>

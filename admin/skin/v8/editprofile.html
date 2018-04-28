@@ -1,0 +1,181 @@
+<div class=breadcrumbs>
+  <ul>
+    <li><a class=icon-users href="{URLQUERY?module=member}">{LNG_USERS}</a></li>
+    <li><span>{TITLE}</span></li>
+  </ul>
+</div>
+<section>
+  <header><h1 class=icon-profile>{TITLE}</h1></header>
+  <form id=setup_frm class=setup_frm method=post action=index.php autocomplete=off>
+    <fieldset>
+      <legend><span>{LNG_EMAIL}</span></legend>
+      <div class=item>
+        <label for=register_email>{LNG_EMAIL}</label>
+        <span class="g-input icon-email"><input {ADMIN} type=email id=register_email name=register_email maxlength=255 value="{EMAIL}" title="{LNG_REGISTER_EMAIL_COMMENT}"></span>
+        <div class=comment id=result_register_email>{LNG_REGISTER_EMAIL_COMMENT}</div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span>{LNG_MEMBER_EDIT_PASSWORD}</span></legend>
+      <div class=item>
+        <div class=input-groups>
+          <div class=width50>
+            <label for=register_password>{LNG_PASSWORD}</label>
+            <span class="g-input icon-password"><input type=password id=register_password name=register_password maxlength=20 title="{LNG_PASSWORD_COMMENT}" data-result=resultPassword></span>
+          </div>
+          <div class=width50>
+            <label for=register_repassword>{LNG_REPASSWORD}</label>
+            <span class="g-input icon-password"><input type=password id=register_repassword name=register_repassword maxlength=20 title="{LNG_REPASSWORD_COMMENT}" data-result=resultPassword></span>
+          </div>
+        </div>
+        <div class=comment id=resultPassword>{LNG_MEMBER_EDIT_PASSWORD_COMMENT}</div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span>{LNG_MEMBER_OTHER}</span></legend>
+      <div class=item>
+        <label for=register_displayname>{LNG_DISPLAYNAME}</label>
+        <span class="g-input icon-user"><input type=text id=register_displayname name=register_displayname maxlength=50 value="{DISPLAYNAME}" title="{LNG_DISPLAYNAME_COMMENT}"></span>
+        <div class=comment id=result_register_displayname>{LNG_DISPLAYNAME_COMMENT}</div>
+      </div>
+      <div class=item>
+        <label for=register_sex>{LNG_SEX}</label>
+        <span class="g-input icon-sex-u"><select name=register_sex id=register_sex title="{LNG_PLEASE_SELECT}">{SEX}</select></span>
+      </div>
+      <div class=item>
+        <div class=usericon><span><img src="{WEBURL}/modules/member/usericon.php?id={ID}" alt=usericon id=imgIcon></span></div>
+        <label for=register_usericon>{LNG_USERICON}</label>
+        <span class="g-input icon-upload"><input type=file class=g-file name=register_usericon id=register_usericon placeholder="{LNG_USERICON}" title="{LNG_USERICON_COMMENT}" accept="{ACCEPT}" data-preview=imgIcon></span>
+        <div class=comment id=result_register_usericon>{LNG_USERICON_COMMENT}</div>
+      </div>
+      <div class=item>
+        <label for=register_website>{LNG_WEBSITE}</label>
+        <span class="g-input icon-world"><input type=url name=register_website id=register_website maxlength=255 value="{WEBSITE}" title="{LNG_WEBSITE_COMMENT}"></span>
+        <div class=comment id=result_register_website>{LNG_WEBSITE_COMMENT}</div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span>{LNG_MEMBER_PROFILE}</span></legend>
+      <div class=item>
+        <div class=input-groups>
+          <div class=width33>
+            <label for=register_pname>{LNG_PNAME}</label>
+            <span class="g-input icon-user"><input type=text name=register_pname id=register_pname maxlength=50 value="{PNAME}"></span>
+          </div>
+          <div class=width33>
+            <label for=register_fname>{LNG_FNAME}</label>
+            <span class=g-input><input type=text name=register_fname id=register_fname maxlength=50 value="{FNAME}"></span>
+          </div>
+          <div class=width33>
+            <label for=register_lname>{LNG_LNAME}</label>
+            <span class=g-input><input type=text name=register_lname id=register_lname maxlength=50 value="{LNAME}"></span>
+          </div>
+        </div>
+      </div>
+      <div class=item>
+        <label for=register_birthday>{LNG_BIRTHDAY}</label>
+        <span class="g-input icon-calendar"><input type=date name=register_birthday id=register_birthday value="{BIRTHDAY}" title="{LNG_PLEASE_SELECT}"></span>
+      </div>
+      <div class=item>
+        <label for=register_company>{LNG_COMPANY}</label>
+        <span class="g-input icon-address"><input type=text name=register_company id=register_company maxlength=255 value="{COMPANY}" title="{LNG_COMPANY_COMMENT}"></span>
+        <div class=comment id=result_register_company>{LNG_COMPANY_COMMENT}</div>
+      </div>
+      <div class=item>
+        <div class=input-groups>
+          <div class=width50>
+            <label for=register_phone1>{LNG_PHONE}</label>
+            <span class="g-input icon-phone"><input type=text name=register_phone1 id=register_phone1 maxlength=10 value="{PHONE1}" title="{LNG_PLEASE_FILL}" pattern="[0-9]+"></span>
+            <em id=result_register_phone1></em>
+          </div>
+          <div class=width50>
+            <label for=register_phone2>{LNG_PHONE}/{LNG_FAX}</label>
+            <span class="g-input icon-print"><input type=text name=register_phone2 id=register_phone2 maxlength=32 value="{PHONE2}" title="{LNG_PLEASE_FILL}"></span>
+            <em id=result_register_phone2></em>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span>{LNG_ADDRESS_DETAIL}</span></legend>
+      <div class=item>
+        <label for=register_address1>{LNG_ADDRESS} 1</label>
+        <span class="g-input icon-address"><input type=text name=register_address1 id=register_address1 maxlength=64 value="{ADDRESS1}"></span>
+      </div>
+      <div class=item>
+        <label for=register_address2>{LNG_ADDRESS} 2</label>
+        <span class="g-input icon-location"><input type=text name=register_address2 id=register_address2 maxlength=64 value="{ADDRESS2}"></span>
+      </div>
+      <div class=item>
+        <div class=input-groups>
+          <div class=width25>
+            <label for=register_provinceID>{LNG_PROVINCE}</label>
+            <span class="g-input icon-location"><select id=register_provinceID name=register_provinceID title="{LNG_PLEASE_SELECT}">{PROVINCEID}</select></span>
+          </div>
+          <div class=width25>
+            <label for=register_province>{LNG_PROVINCE}</label>
+            <span class="g-input icon-location"><input type=text name=register_province id=register_province maxlength=64 value="{PROVINCE}" title="{LNG_PLEASE_FILL}"></span>
+          </div>
+          <div class=width25>
+            <label for=register_zipcode>{LNG_ZIPCODE}</label>
+            <span class="g-input icon-location"><input type=number id=register_zipcode name=register_zipcode value="{ZIPCODE}" title="{LNG_PLEASE_FILL}"></span>
+          </div>
+          <div class=width50>
+            <label for=register_country>{LNG_COUNTRY}</label>
+            <span class="g-input icon-world"><select id=register_country name=register_country title="{LNG_PLEASE_SELECT}">{COUNTRY}</select></span>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span>{LNG_CONFIG_OTHER}</span></legend>
+      <div class=item>
+        <label for=register_invite>{LNG_INVITE}</label>
+        <span class="g-input icon-flag"><input type=text readonly id=register_invite value="{INVITE}" title="{LNG_PLEASE_FILL}"></span>
+      </div>
+      <div class=item>
+        <label><input type=checkbox name=register_subscrib id=register_subscrib value=1 {SUBSCRIB} title="{LNG_SUBSCRIB}">&nbsp;{LNG_SUBSCRIB}</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span>{LNG_MEMBER_STATUS}</span></legend>
+      <div class=item>
+        <label for=register_status>{LNG_MEMBER_STATUS}</label>
+        <span class="g-input icon-star0"><select {ADMIN} name=register_status id=register_status title="{LNG_REGISTER_STATUS_COMMENT}">{STATUS}</select></span>
+        <div class=comment id=result_register_status>{LNG_REGISTER_STATUS_COMMENT}</div>
+      </div>
+      <div class=item>
+        <label><input type=checkbox name=register_admin_access id=register_admin_access value=1 {ADMIN_ACCESS} title="{LNG_ADMIN_ACCESS}">&nbsp;{LNG_ADMIN_ACCESS}</label>
+      </div>
+    </fieldset>
+    <fieldset class=submit>
+      <input type=submit class="button large save" value="{LNG_SAVE}">
+      <input type=hidden name=register_id id=register_id value={ID}>
+    </fieldset>
+  </form>
+</section>
+<script>
+  new GForm('setup_frm', 'updateprofile.php').onsubmit(doFormSubmit);
+  new GValidator('register_email', 'keyup,change', checkEmail, 'checkemail.php', null, 'setup_frm');
+  new GValidator('register_password', 'keyup,change', checkPassword);
+  new GValidator('register_repassword', 'keyup,change', checkPassword);
+  new GValidator('register_displayname', 'keyup,change', checkDisplayname, 'checkdisplayname.php', null, 'setup_frm');
+  new GValidator('register_phone1', 'keyup,change', checkPhone, 'checkphone.php', null, 'setup_frm');
+  $G('register_birthday').addEvent('change', function () {
+    var age = new Date().compare(this.value);
+    this.calendar.setText(this.calendar.getDateFormat('d M Y') + ' ({LNG_AGE} ' + age.year + ' {LNG_YEAR} ' + age.month + ' {LNG_MONTH} ' + age.day + ' {LNG_DAYS})');
+  });
+  var _contryChanged = function () {
+    if (this.value != 'TH') {
+      $G($E('register_provinceID').parentNode.parentNode).addClass('hidden');
+      $G($E('register_province').parentNode.parentNode).removeClass('hidden');
+    } else {
+      $G($E('register_provinceID').parentNode.parentNode).removeClass('hidden');
+      $G($E('register_province').parentNode.parentNode).addClass('hidden');
+    }
+  };
+  if ($E('register_country')) {
+    $G('register_country').addEvent('change', _contryChanged);
+    _contryChanged.call($E('register_country'));
+  }
+</script>

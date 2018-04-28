@@ -1,0 +1,65 @@
+#share_frm {
+	max-width: 600px;
+}
+#share_frm h1 {
+	color: #000;
+	padding: 5px 0;
+	font-size: 150%;
+}
+#share_frm h2 {
+	background-color: #004977;
+	padding: 2px 5px;
+	color: #FFF;
+	font-size: 1em;
+}
+#share_frm address {
+	color: navy;
+	font-style: italic;
+	padding-bottom: 1em;
+}
+#share_frm #share_reciever {
+	display: block;
+}
+#share_frm img {
+	margin-right: 5px;
+}
+.widget_share a {
+	font-size: 1.4em;
+	vertical-align: middle;
+	text-align: center;
+	display: inline-block;
+	padding: 0 5px;
+}
+.widget_share a:before {
+	margin-right: 0;
+}
+.color .widget_share > a {
+	padding: 10px 15px;
+	color: #FFF;
+	float: left;
+	font-size: 1.6em;
+	border-width: 5px;
+	border-color: rgba(0,0,0,0.1);
+	border-style: solid none none none;
+}
+.color .widget_share > a:hover {
+	border-color: rgba(0,0,0,0.3);
+}
+.color .widget_share a:before {
+	margin: 0;
+}
+.color .widget_share a.icon-facebook {
+	background-color: #2C5FA1;
+}
+.color .widget_share a.icon-googleplus {
+	background-color: #EB4026;
+}
+.color .widget_share a.icon-google {
+	background-color: #D3222A;
+}
+.color .widget_share a.icon-twitter {
+	background-color: #65CCF7;
+}
+.color .widget_share a.icon-email {
+	background-color: #F6881F;
+}

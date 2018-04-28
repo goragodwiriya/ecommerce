@@ -1,0 +1,47 @@
+<div class="gcss-wrapper">
+  <article id=product-view class=bdr_content>
+    <nav class="breadcrumbs">
+      <ul>
+        {BREADCRUMS}
+        <li><a href="{URL}" title="{TOPIC}" target=_blank><span>{TOPIC}</span></a></li>
+      </ul>
+    </nav>
+    <div class="bg-white padding-left-right-top-bottom">
+      <div class="ggrid clear">
+        <div class="block4 float-left">
+          <div id=gallery-slideshow><img src="{IMAGE}" alt="{TOPIC}" class=nozoom></div>
+        </div>
+        <div class="block8 float-right">
+          <h2>{TOPIC}</h2>
+          <p class="product-icon clear">{ICONS}</p>
+          <p>{DESCRIPTION}</p>
+          <p><select id="additional_{QID}">{ADDITIONAL}</select></p>
+          <p class="price">
+            <label for=currencyunit>{LNG_PRICE}</label>
+            <span class=net id="net_{QID}">{NET}</span>
+            <select id=currencyunit>{CURRENCYOPTIONS}</select>
+          </p>
+          <p>
+            <a class="addtocart button pink rounded large icon-addtocart" id="addtocart_{QID}">{LNG_ADD_TO_CART}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <section class="product-detail margin-top">
+      <h3>{LNG_DETAIL}</h3>
+      <div class="margin-top">{DETAIL}</div>
+    </section>
+    <section class="margin-top related">
+      <header><h4>{LNG_PRODUCT_RELATED}</h4></header>
+      <div class="related clear margin-top">{WIDGET_PRODUCT 1_4__{CATEGORY}}</div>
+    </section>
+  </article>
+  <script>
+    $G('gallery-slideshow').Ready(function () {
+      new GProductSlide('gallery-slideshow').JSONData({PICTURES}).playSlideShow();
+      inintProductView('product-view');
+      inintProductList('product-view');
+      $G('currencyunit').addEvent('change', currencyChange);
+    });
+  </script>
+</div>

@@ -1,0 +1,3 @@
+article > header > h1.payment:before, ul#dashboard > li.payment > h3:before {
+  content: '\e670';
+}

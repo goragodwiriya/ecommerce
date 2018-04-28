@@ -1,0 +1,41 @@
+<div class="clear gcss-wrapper wrapper_bg_color wrapper_bg padding-top-bottom-left-right" id="scroll-to">
+<article class=bdr_content>
+	<header>
+		<h2 class=icon-email>{TITLE}</h2>
+		<nav class=breadcrumbs>
+			<ul>
+				{BREADCRUMS}
+				<li><span>{TITLE}</span></li>
+			</ul>
+		</nav>
+	</header>
+	<form id=contact_frm class=mainform method=post action=index.php>
+		<div class=item>
+			<label class="g-input icon-email-sent"><input type=text id=mail_reciever readonly value="{RECIEVER}" title="{LNG_EMAIL_SEND} {LNG_TO}"></label>
+		</div>
+		<div class=item>
+			<label class="g-input icon-email"><input type=text id=mail_sender name=mail_sender value="{SENDER}" placeholder="{LNG_EMAIL_SENDER}" autofocus></label>
+		</div>
+		<div class=item>
+			<label class="g-input icon-edit"><input type=text name=mail_topic id=mail_topic placeholder="{LNG_EMAIL_SUBJECT}"></label>
+		</div>
+		<div class=item><label class="g-input icon-file"><textarea class=write_detail id=mail_detail name=mail_detail rows=10 placeholder="{LNG_DETAIL}"></textarea></label></div>
+		<div class=item>
+			<label class="g-input antispam">
+				<span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=antispam class=antispam></span>
+				<input type=text name=mail_antispam id=mail_antispam smaxlength=4 value="{ANTISPAMVAL}" placeholder="{LNG_ANTISPAM_COMMENT}">
+			</label>
+		</div>
+		<div class=item>
+			<input type=submit id=mail_submit class="button large send" value="{LNG_SEND_MESSAGE}">
+			<input type=hidden name=mail_to value={RECIEVERID}>
+			<input type=hidden name=antispam value={ANTISPAM}>
+		</div>
+	</form>
+</article>
+<script>
+	$G(window).Ready(function() {
+		new GForm('contact_frm', '{WEBURL}/modules/member/mailto.php', null, false).onsubmit(doFormSubmit);
+	});
+</script>
+</div>

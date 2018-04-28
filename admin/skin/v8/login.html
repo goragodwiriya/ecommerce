@@ -1,0 +1,39 @@
+<a class=skip_content accesskey=s href=#login_frm title="{LNG_SKIP_TO_CONTENT}"></a>
+<header id=to-top>
+  <div class=sec_1>
+    <a href=http://www.goragod.com accesskey=a><abbr title="Goragod Content Management System">GCMS</abbr></a>
+  </div>
+  <div class=sec_2 id=change_display>
+    <span class=label>{LNG_CHANGE_DISPLAY}</span>
+    <a class=small href="{WEBURL}/admin/index.php" title="{LNG_CHANGE_FONT_SMALL}"><span>A</span></a>
+    <a class=normal href="{WEBURL}/admin/index.php" title="{LNG_CHANGE_FONT_NORMAL}"><span>A</span></a>
+    <a class=large href="{WEBURL}/admin/index.php" title="{LNG_CHANGE_FONT_LARGE}"><span>A</span></a>
+    <span class=label>{LNG_CHANGE_LANGUAGE}</span>
+    {LANGUAGES}
+  </div>
+  <div class=sec_3>
+    <a id=preview class=icon-home href={WEBURL}/index.php target=preview accesskey=p title="{LNG_PREVIEW}">&nbsp;</a>
+  </div>
+</header>
+<div class=login>
+  <form id=login_frm method=post action="{URLQUERY?action=login}" autocomplete=off>
+    <h1 class=icon-customer>{LNG_ADMIN_TITLE}</h1>
+    <p class={MSG}>{MESSAGE}</p>
+    <fieldset>
+      <p><label class="g-input icon-email"><input id=email name=email type=text accesskey=e maxlength=255 value="{LOGINEMAIL}" placeholder="{LNG_EMAIL}" autofocus {EMAIL}></label></p>
+      <p><label class="g-input icon-password"><input id=password name=password type=password accesskey=p maxlength=20 value="{LOGINPASSWORD}" placeholder="{LNG_PASSWORD}" {PASSWORD}></label></p>
+      <p class="table fullwidth collapse">
+        <a class=td href="{URLQUERY?action=forgot}" accesskey=f title="{LNG_FORGOT_TITLE}">{LNG_FORGOT} ?</a>
+        <label class="td right">{LNG_LOGIN_REMEMBER} <input name=remember type=checkbox value=1 title="{LNG_LOGIN_REMEMBER}" {REMEMBER}></label>
+      </p>
+      <input class="button ok large wide" type=submit value="{LNG_LOGIN}">
+    </fieldset>
+  </form>
+</div>
+<p class=center>
+  <img src={WEBURL}/admin/skin/{SKIN}/img/html5-logo.png width=165 height=64 alt="HTML5 Powered with CSS3 / Styling, and Semantics">
+  <a href=http://www.w3.org/WAI/WCAG2AAA-Conformance title="Explanation of Level Triple-A Conformance"> <img height=32 width=88 src=//www.w3.org/WAI/wcag2AAA alt="Level Triple-A conformance icon, W3C-WAI Web Content Accessibility Guidelines 2.0"> </a>
+</p>
+<script>
+  new GForm('login_frm');
+</script>

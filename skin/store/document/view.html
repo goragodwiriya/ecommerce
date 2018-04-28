@@ -1,0 +1,30 @@
+<div id=document-view class="gcss-wrapper">
+  <div class=bdr_content>
+    <header>
+      <nav class=breadcrumbs>
+        <ul>
+          {BREADCRUMS}
+          <li><a href="{URL}" title="{TOPIC}" target=_blank><span>{TOPIC-50}</span></a></li>
+        </ul>
+      </nav>
+      <h2 class=cuttext>{TOPIC}</h2>
+    </header>
+    <div class=q>
+      <div class=detail>
+        <p class=content-action>
+          <a class="icon-quote quote-{QID}-0-0-{MODULE}" title="{LNG_QUOTE}"></a>
+          <a class="icon-print print-{QID}-0-0-{MODULE}" title="{LNG_PRINT_PAGE}"></a>
+        </p>
+        {DETAIL}
+      </div>
+    </div>
+  </div>
+  <section id=comment-list>
+    <header><h3 class="icon-comments">{LNG_COMMENTS}</h3></header>
+    {COMMENTLIST}
+  </section>
+  {REPLYFORM}
+</div>
+<script>
+  inintDocumentView('document-view', 'document');
+</script>

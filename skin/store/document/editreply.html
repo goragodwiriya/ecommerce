@@ -1,0 +1,37 @@
+<div class="gcss-wrapper">
+  <div class=bdr_content>
+    <header>
+      <nav class=breadcrumbs>
+        <ul>
+          {BREADCRUMS}
+          <li><a href="{WEBURL}/index.php?module={MODULE}&amp;id={QID}#R_{RID}" title="{TOPIC}"><span>{TOPIC-50}</span></a></li>
+        </ul>
+      </nav>
+      <h2>{LNG_EDIT_COMMENT_TITLE}</h2>
+    </header>
+    <form id=editreply-form class=mainform method=post action="{WEBURL}/index.php" autocomplete=off>
+      <fieldset>
+        <div class=item>
+          <label for=reply_detail>{LNG_DETAIL}</label>
+          <span class="g-input icon-file"><textarea id=reply_detail name=reply_detail rows=15 placeholder="{LNG_DETAIL_COMMENT}">{DETAIL}</textarea></span>
+        </div>
+        <div class=item>
+          <div class="g-input antispam">
+            <span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=Antispam></span>
+            <input type=text id=reply_antispam name=reply_antispam maxlength=4 value="{ANTISPAMVAL}" placeholder="{LNG_ANTISPAM_COMMENT}">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class=submit>
+        <input type=submit class="button large save" value="{LNG_SAVE}">
+        <input type=hidden name=reply_antispamid value={ANTISPAM}>
+        <input type=hidden name=index_id value={QID}>
+        <input type=hidden name=reply_id value={RID}>
+        <input type=hidden name=module_id value={MODULEID}>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<script>
+  inintDocumentEditor('editreply-form', 'reply_detail', WEB_URL + 'modules/document/reply.php');
+</script>

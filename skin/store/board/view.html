@@ -1,0 +1,40 @@
+<div id=board-view>
+	<div class=bdr_content>
+		<header>
+			<h2 class=cuttext>{TOPIC}</h2>
+			<nav class=breadcrumbs>
+				<ul>
+					{BREADCRUMS}
+					<li><a href="{URL}" title="{TOPIC}" target=_blank><span>{TOPIC-50}</span></a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="q imgicon">
+			<div class=clear>
+				<img class=usericon src="{WEBURL}/modules/member/usericon.php?id={UID}" alt=usericon>
+				<div class=detail>
+					<p class=content-action>
+						<a class="icon-quote quote-{QID}-0-0-{MODULE}" title="{LNG_QUOTE}"></a>
+						<a class="icon-edit edit-{QID}-0-0-{MODULE}" title="{LNG_EDIT}"></a>
+						<a class="icon-{PIN}pin pin-{QID}-0-0-{MODULE}" title="{PIN_TITLE}" id=board_pin></a>
+						<a class="icon-{LOCK}lock lock-{QID}-0-0-{MODULE}" title="{LOCK_TITLE}" id=board_lock></a>
+						<a class="icon-delete delete-{QID}-0-0-{MODULE}" title="{DELETE}"></a>
+						<a class="icon-print print-{QID}-0-0-{MODULE}" title="{LNG_PRINT_PAGE}"></a>
+					</p>
+					{DETAIL}
+				</div>
+			</div>
+			<footer class="reaction cuttext">
+				<a class="icon-user status{STATUS}" title="{LNG_SENDER}" href="{WEBURL}/index.php?module=member&amp;id={UID}">{DISPLAYNAME}</a>
+				<span class="icon-create create" title="{LNG_POSTED}">{LASTUPDATE}</span>
+				<span class="icon-comments comments" title="{LNG_COMMENTS}">{COMMENTS}</span>
+				<span class="icon-visited visited" title="{LNG_VIEWS}">{VISITED}</span>
+			</footer>
+		</div>
+	</div>
+	<div id=comment-list>{COMMENTLIST}</div>
+	{REPLYFORM}
+</div>
+<script>
+	inintDocumentView('board-view', 'board');
+</script>

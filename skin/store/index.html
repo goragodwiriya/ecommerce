@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang={LANGUAGE} dir=ltr>
+  <head>
+    <title>{TITLE}</title>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="{WEBURL}/favicon.ico">
+    <link rel=icon href="{WEBURL}/favicon.gif">
+    <link rel=stylesheet href={WEBURL}/{SKIN}css.php>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Prompt" rel="stylesheet">
+    <script src="{WEBURL}/js/js.php"></script>
+    <script>
+      {SCRIPT}
+    </script>
+    {META}
+  </head>
+  <body class="responsive">
+    <a class=skip_content accesskey=s href=#content title="{LNG_SKIP_TO_CONTENT}"></a>
+    <div id=slidemenu_content>
+      <header class="header">
+        <div class="top_bar">
+          <div class="gcss-wrapper">
+            <div class="table fullwidth">
+              <div class="td left">{WIDGET_SEARCH}</div>
+              <div class="td right">{WIDGET_CART}</div>
+            </div>
+          </div>
+        </div>
+        <div class="gcss-wrapper">
+          <div class="table fullwidth">
+            <div class="td">
+              <h1 id=logo>
+                <a href="{WEBURL}/index.php">{WEBTITLE}</a>
+              </h1>
+            </div>
+            <div class="td">
+              <nav id=topmenu class="topmenu slidemenu right">
+                <ul>{MAINMENU}{WIDGET_CATEGORYMENU product}</ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="clear margin-top">
+        <div class=content id="scroll-to">
+          <div id=content class=article>
+            {CONTENT}
+          </div>
+        </div>
+      </main>
+      <footer id=footer class="footer footer_bg_color footer_bg">
+        <div class="gcss-wrapper">
+          <div class="table collapse fullwidth">
+            <nav class="td"><ul class="bottom_menu">{BOTTOMMENU}</ul></nav>
+            <div class="td right">{WIDGET_SHARE}</div>
+          </div>
+          <p class="copy">
+            Copyright &copy; 2018
+            <a href="{WEBURL}"><em>{WEBTITLE}</em></a> GCMS Version {VERSION}
+            designed by <a href="http://www.goragod.com" target="_blank">Goragod.com</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      new GDDMenu('topmenu');
+    </script>
+  </body>
+</html>

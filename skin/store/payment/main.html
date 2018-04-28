@@ -1,0 +1,73 @@
+<div class="gcss-wrapper">
+  <article class=bdr_content>
+    <form id=payment_frm class="payment_frm main_frm clear" method=post action=index.php>
+      <header>
+        <nav class=breadcrumbs>
+          <ul>{BREADCRUMS}</ul>
+        </nav>
+        <h2 class=icon-payment>{LNG_PAYMENT_TITLE}</h2>
+      </header>
+      <fieldset>
+        <div class=item>
+          <label for=payment_email>{LNG_EMAIL}</label>
+          <span class="g-input icon-email"><input type=email name=payment_email id=payment_email value="{EMAIL}" title="{LNG_EMAIL_TITLE}"></span>
+        </div>
+        <div class=comment id=result_payment_email>{LNG_EMAIL_TITLE}</div>
+        <div class=item>
+          <label for=payment_orderid>{LNG_ORDER_NO}</label>
+          <span class="g-input icon-edit"><input type=text name=payment_orderid id=payment_orderid maxlength=20 value="{ORDERNO}" title="{LNG_PAYMENT_ORDERID_COMMENT}"></span>
+        </div>
+        <div class=comment id=result_payment_orderid>{LNG_PAYMENT_ORDERID_COMMENT}</div>
+        <div class=item>
+          <label for=payment_date>{LNG_PAYMENT_DATE}</label>
+          <div class="input-groups-table">
+            <span class="width g-input icon-calendar"><input type=date id=payment_date name=payment_date></span>
+            <span class="width">{LNG_TIME}</span>
+            <label class="width"><select name=payment_hour title="{LNG_PLEASE_SELECT} {LNG_HOUR}">{HOUR}</select></label>
+            <span class="width">:</span>
+            <label class="width"><select name=payment_minute title="{LNG_PLEASE_SELECT} {LNG_MINIUTE}">{MINUTE}</select></label>
+            <span class="width">{LNG_TIME_DIGIT}</span>
+          </div>
+        </div>
+        <div class=comment id=result_payment_date>{LNG_PAYMENT_CREATE_COMMENT}</div>
+        <div class=item>
+          <label for=payment_amount>{LNG_TOTAL_AMOUNT}</label>
+          <div class="input-groups-table">
+            <span class="width g-input icon-money"><input type=text class=currency name=payment_amount id=payment_amount value="{AMOUNT}" maxlength=20 title="{LNG_PAYMENT_AMOUNT_COMMENT}"></span>
+            <span class="width">{CURRENCYUNIT}</span>
+          </div>
+        </div>
+        <div class=comment id=result_payment_amount>{LNG_PAYMENT_AMOUNT_COMMENT}</div>
+        <ul>{PAYMENTMETHOD}</ul>
+        <div class=comment id=result_payment_method_0>{LNG_PAYMENT_PAID_METHOD_COMMENT}</div>
+        <div class=item>
+          <label for=payment_ref>{LNG_PAYMENT_REF_NO}</label>
+          <span class="g-input icon-edit"><input type=text name=payment_ref id=payment_ref title="{LNG_PAYMENT_REF_NO_COMMENT}"></span>
+        </div>
+        <div class=comment id=result_payment_ref>{LNG_PAYMENT_REF_NO_COMMENT}</div>
+        <div class=item>
+          <label for=payment_detail>{LNG_DETAIL}</label>
+          <span class="g-input icon-file"><textarea name=payment_detail id=payment_detail rows=5 title="{LNG_PAYMENT_DETAIL}">{DETAIL}</textarea></span>
+        </div>
+        <div class=comment id=result_payment_detail>{LNG_PAYMENT_DETAIL}</div>
+        <div class=antispam>
+          <label class="g-input antispam">
+            <span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=antispam></span>
+            <input type=text name=payment_antispam id=payment_antispam maxlength=4 value="{ANTISPAMCHAR}" placeholder="{LNG_ANTISPAM_COMMENT}">
+          </label>
+        </div>
+        <div class=comment id=result_payment_antispam>{LNG_ANTISPAM_COMMENT}</div>
+      </fieldset>
+      <fieldset class="submit right">
+        <input type=submit class="button large save" value="{LNG_PAYMENT_SUBMIT}">
+        <input type=hidden id=antispam name="antispam" value={ANTISPAM}>
+      </fieldset>
+      <div class=message>{LNG_PAYMENT_COMMENT}</div>
+    </form>
+  </article>
+  <script>
+    $G(window).Ready(function () {
+      new GForm('payment_frm', '{WEBURL}/modules/payment/confirmpayment.php').onsubmit(doFormSubmit);
+    });
+  </script>
+</div>

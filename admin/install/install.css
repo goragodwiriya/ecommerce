@@ -1,0 +1,111 @@
+html {
+  background-color: #F9F9F9;
+}
+body {
+  -moz-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  color: #333333;
+  font-family: Tahoma;
+  font-size: 12px;
+  margin: 2em auto;
+  padding: 1em 2em;
+  width: 800px;
+}
+.button {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #BBBBBB;
+  color: #464646;
+  cursor: pointer;
+  line-height: 16px;
+  padding: 6px 12px;
+  text-decoration: none;
+  background: url(img/white-grad.png) repeat-x scroll left top #F2F2F2;
+  position: relative;
+}
+em {
+  font-style: normal;
+  color: #F00;
+}
+.error {
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border: 1px solid;
+  margin: 10px 0;
+  padding: 5px 5px 5px 30px;
+  display: block;
+  background: #FFEBE8 url(img/invalid.png) 10px 50% no-repeat;
+  border-color: #DAA;
+  color: #601010;
+}
+i {
+  font-style: normal;
+  color: #093;
+}
+img {
+  border: none;
+  vertical-align: middle;
+}
+h1 {
+  font-family: "Comic Sans MS", Tahoma;
+  font-size: 300%;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 5px #666;
+}
+h2 {
+  color: #999;
+  display: block;
+  border-bottom: 1px solid #BBBBBB;
+  padding-bottom: 5px;
+}
+.correct {
+  background: transparent url(img/valid.png) 100% 50% no-repeat;
+}
+.incorrect {
+  background: transparent url(img/invalid.png) 100% 50% no-repeat;
+}
+li {
+  line-height: 1.8em;
+}
+ol > li {
+  line-height: 1.8em;
+  border-bottom: 1px dashed #DDD;
+}
+form > p > label {
+  font-weight: bold;
+  float: left;
+  width: 150px;
+}
+p.row {
+  padding: 5px 10px 0 10px;
+  background-color: #EFEFEF;
+  display: block;
+  clear: both;
+  margin: 0;
+}
+p.comment {
+  margin: 0 0 5px 0;
+  padding: 5px 10px 5px 160px;
+  color: green;
+  font-size: 90%;
+}
+input {
+  vertical-align: middle;
+  font-family: Tahoma;
+  font-size: 100%;
+}
+div.footer {
+  text-align: center;
+  color: #999;
+  margin-top: 10px;
+}
+div.footer a {
+  color: #999;
+}

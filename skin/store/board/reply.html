@@ -1,0 +1,39 @@
+<form id=reply-form class="mainform bdr_content" method=post action="{WEBURL}/index.php" autocomplete=off>
+	<fieldset>
+		<legend><span class=icon-reply>{LNG_REPLY_TITLE}</span></legend>
+		<div class=item>
+			<label for=reply_detail>{LNG_DETAIL}</label>
+			<span class="g-input icon-file"><textarea id=reply_detail name=reply_detail rows=5 placeholder="{LNG_DETAIL_COMMENT}"></textarea></span>
+		</div>
+		<UPLOAD>
+			<div class=item>
+				<label class="g-input icon-upload"><input type=file class=g-file id=reply_picture name=reply_picture placeholder="{LNG_IMAGE} {LNG_UPLOAD}" title="{LNG_FILE_UPLOAD_COMMENT}"></label>
+				<div class=comment id=result_reply_picture>{LNG_FILE_UPLOAD_COMMENT}</div>
+			</div>
+		</UPLOAD>
+		<div class=item>
+			<div class="g-input antispam">
+				<span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=Antispam></span>
+				<input type=text id=reply_antispam name=reply_antispam maxlength=4 value="{ANTISPAMVAL}" placeholder="{LNG_ANTISPAM_COMMENT}">
+			</div>
+		</div>
+		<MEMBER>
+			<div class=item>
+				<div class=input-groups>
+					<label class="width50 g-input icon-email"><input type=text id=reply_email name=reply_email maxlength=255 value="{LOGIN_EMAIL}" placeholder="{LNG_EMAIL}" data-result=reply_user></label>
+					<label class="width50 g-input icon-password"><input type=password id=reply_password name=reply_password maxlength=20 value="{LOGIN_PASSWORD}" placeholder="{LNG_PASSWORD}" data-result=reply_user></label>
+				</div>
+			</div>
+		</MEMBER>
+	</fieldset>
+	<fieldset class=submit>
+		<input type=submit class="button large save" value="{LNG_REPLY_SUBMIT}">
+		<input type=hidden name=reply_antispamid value={ANTISPAM}>
+		<input type=hidden name=index_id value={QID}>
+		<input type=hidden name=reply_id value=0>
+		<input type=hidden name=module_id value={MODULEID}>
+	</fieldset>
+</form>
+<script>
+	inintDocumentEditor('reply-form', 'reply_detail', WEB_URL + 'modules/board/reply.php');
+</script>

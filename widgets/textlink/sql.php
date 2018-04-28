@@ -1,0 +1,26 @@
+<?php die('File not found !')?>
+define("DB_TEXTLINK", PREFIX."_textlink");
+DROP TABLE IF EXISTS `{prefix}_textlink`;
+CREATE TABLE IF NOT EXISTS `{prefix}_textlink` (`id` int(11) NOT NULL auto_increment,`text` text collate utf8_unicode_ci NOT NULL,`url` text collate utf8_unicode_ci NOT NULL,`publish_start` int(11) NOT NULL,`publish_end` int(11) NOT NULL,`logo` text collate utf8_unicode_ci NOT NULL,`width` int(11) NOT NULL,`height` int(11) NOT NULL,`type` varchar(11) collate utf8_unicode_ci NOT NULL,`published` smallint(1) NOT NULL,`link_order` smallint(2) NOT NULL,`last_preview` int(11) unsigned NOT NULL,`description` text collate utf8_unicode_ci NOT NULL,`template` text collate utf8_unicode_ci NOT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `{prefix}_textlink` (`text`, `url`, `type`, `published`) VALUES ('Goragod.com','http://www.goragod.com/','list','1');
+DELETE FROM `{prefix}_language` WHERE `owner`='textlink';
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_DATELESS','text','textlink','0','ไม่มีวันหมดอายุ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_PUBLISHED_END','text','textlink','0','วันที่สิ้นสุด');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_PUBLISHED_START','text','textlink','0','วันที่เริ่มต้น');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_PUBLISHED_START_END_COMMENT','text','textlink','0','กำหนดวันที่เริ่มต้นและสิ้นสุดการแสดงลิงค์ (ลิงค์จะถูกจัดการแสดงผลภายในเวลาที่กำหนดโดยอัตโนมัติ)');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK','text','textlink','0','Text Links');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_CUSTOM','text','textlink','0','โฆษณาที่กำหนดเอง');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_DESCRIPTION_COMMENT','text','textlink','0','หมายเหตุหรือคำอธิบายเกี่ยวกับลิ้งค์ สั้นๆ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_DETAILS','text','textlink','0','รายละเอียดของลิงค์');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_LOGO_COMMENT','text','textlink','0','อัปโหลดรูปภาพโลโกของลิงค์ (ถ้ามี) ชนิด jpg, gif, png เท่านั้น โลโกที่อัปโหลดควรมีขนาดเท่ากัน');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_NAME_COMMENT','text','textlink','0','กรอกชื่อของลิงค์ ใช้สำหรับจัดกลุ่มในการแสดงผลลิงค์ ลิงค์ที่มีชื่อเดียวกันจะแสดงผลที่ตำแหน่งเดียวกัน สามารถใส่ภาษาอังกฤษตัวพิมพ์เล็กและตัวเลขได้เท่านั้น');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_PREFIX_TITLE','text','textlink','0','กรอกตัวเลขใช้สำหรับจัดกลุ่มลิงค์เพื่อไปแสดงยังตำแหน่งต่างๆ');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_PUBLISHED','text','textlink','0','การเผยแพร่ลิงค์');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_TEMPLATE_COMMENT','text','textlink','0','กรอกโค้ด HTML สำหรับลิงค์นี้ คุณสามารถเลือกใส่โค้ดที่มาจากแหล่งอื่นได้ เช่นโค้ด Adsense หรือระบุรายละเอียดของลิงค์ด้านล่าง');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_TEXT_COMMENT','text','textlink','0','ข้อความแสดงบนลิงค์ สามารถใช้ &lt;br&gt; เพื่อบังคับให้ข้อความขึ้นบรรทัดใหม่ได้');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_TITLE','text','textlink','0','ส่วนเสริมสำหรับควบคุมและจัดการแสดงผลลิงค์หรือป้ายโฆษณา');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_TEXTLINK_TYPE_COMMENT','text','textlink','0','เลือกชนิดของลิงค์ที่ต้องการ หรือ เลือกรายการแรกสุดหากคุณต้องการกำหนดลิงค์นี้เอง');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_WIDGET_URL_COMMENT','text','textlink','0','กรอก URL ของลิงค์ (เช่น http://www.domain.tld)');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('TEXTLINK_TYPE_EMPTY','text','textlink','1','กรุณากรอกชนิดของลิงค์');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('TEXTLINK_TYPE_ERROR','text','textlink','1','ชนิดของลิงค์ต้องเป็นภาษาอังกฤษตัวพิมพ์เล็กและตัวเลขเท่านั้น');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('URL_EMPTY','text','textlink','1','กรุณากรอก URL');
