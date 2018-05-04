@@ -54,7 +54,7 @@ $config['hour'] = +0;
 // ภาษาที่ติดตั้ง
 $config['languages'] = array('th');
 // skin ที่เลือกใช้
-$config['skin'] = 'default';
+$config['skin'] = 'store';
 // สถานะของสมาชิก
 $config['member_status']['0'] = 'สมาชิกทั่วไป';
 $config['member_status']['1'] = 'แอดมิน';
