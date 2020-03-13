@@ -86,7 +86,7 @@ if (INSTALL_INIT == 'upgrade') {
   echo '<li class=correct>Update <strong>languages</strong> <i>complete...</i></li>';
   ob_flush();
   flush();
-  // อัปเดทฐานข้อมูล
+  // อัปเดตฐานข้อมูล
   $db->query("ALTER TABLE `".DB_USER."` ADD `session_id` VARCHAR(32) NOT NULL");
   $db->query("OPTIMIZE TABLE `".DB_USER."`");
   echo '<li class=correct>Optimize and Update database <strong>'.DB_USER.'</strong> <i>complete...</i></li>';

@@ -51,7 +51,7 @@ if (gcms::isReferer() && gcms::isAdmin() && $ids != '') {
           $err = gcms::sendMail(3, 'member', $replace, $item['email']);
         }
         if ($err == '') {
-          // อัปเดทรหัสผ่านใหม่
+          // อัปเดตรหัสผ่านใหม่
           $save['password'] = md5($password.$item['email']);
           // บันทึก
           $db->edit(DB_USER, $item['id'], $save);

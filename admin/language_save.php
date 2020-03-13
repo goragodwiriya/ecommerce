@@ -84,7 +84,7 @@ if (gcms::isReferer() && gcms::isAdmin()) {
             if ($name != $id) {
               // แก้ไขชื่อภาษา
               $db->query("ALTER TABLE `".DB_LANGUAGE."` CHANGE `$id` `$name` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL");
-              // อัปเดทไอคอน
+              // อัปเดตไอคอน
               @rename(DATA_PATH."language/$id.gif", DATA_PATH."language/$name.gif");
             }
             // คืนค่า

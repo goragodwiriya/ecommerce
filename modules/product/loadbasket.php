@@ -36,7 +36,7 @@ if (defined('MAIN_INIT')) {
       }
       if ($quantity != $item['quantity']) {
         $item['quantity'] = $quantity;
-        // อัปเดทจำนวนสินค้าในตะกร้า
+        // อัปเดตจำนวนสินค้าในตะกร้า
         $db->edit(DB_CART, $item['id'], array('quantity' => $quantity));
       }
       // จำกัดจำนวนสินค้า

@@ -100,12 +100,12 @@
 							}
 							$changed = false;
 							if ($menu_order != $item['menu_order']) {
-								// อัปเดท menu_order
+								// อัปเดต menu_order
 								$item['menu_order'] = $menu_order;
 								$changed = true;
 							}
 							if ($top_level != $item['level']) {
-								// อัปเดท level
+								// อัปเดต level
 								$item['level'] = $top_level;
 								$changed = true;
 							}

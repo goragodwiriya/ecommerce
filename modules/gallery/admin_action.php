@@ -48,7 +48,7 @@
 					}
 					// ลบb
 					$db->query("DELETE FROM `".DB_GALLERY."` WHERE `id` IN ($ids) AND `album_id`=$album_id");
-					// อัปเดทจำนวนรูปภาพในอัลบัม
+					// อัปเดตจำนวนรูปภาพในอัลบัม
 					$sql = "SELECT COUNT(*) FROM `".DB_GALLERY."` WHERE `module_id`=C.`module_id` AND `album_id`=$album_id";
 					$sql = "UPDATE `".DB_GALLERY_ALBUM."` AS C SET C.`count`=($sql) WHERE C.`id`=$album_id";
 					$db->query($sql);

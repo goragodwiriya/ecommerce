@@ -23,7 +23,7 @@ if (defined('MAIN_INIT')) {
     $title = $lng['PAGE_NOT_FOUND'];
     $content = '<div class=error>'.$title.'</div>';
   } else {
-    // อัปเดทเปิดดู
+    // อัปเดตเปิดดู
     if ((int)$_REQUEST['visited'] == 0) {
       $index['visited'] ++;
       $db->edit(DB_PRODUCT, $index['id'], array('visited' => $index['visited']));

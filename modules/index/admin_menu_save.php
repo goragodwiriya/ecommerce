@@ -102,12 +102,12 @@
 						$menu_order++;
 						$top_level = $menu_order == 1 ? 0 : min($top_level + 1, $item['level']);
 						if ($menu_order != $item['menu_order']) {
-							// อัปเดท menu_order
+							// อัปเดต menu_order
 							$item['menu_order'] = $menu_order;
 							$changed = true;
 						}
 						if ($top_level != $item['level']) {
-							// อัปเดท level
+							// อัปเดต level
 							$item['level'] = $top_level;
 							$changed = true;
 						}

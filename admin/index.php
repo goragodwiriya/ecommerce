@@ -84,7 +84,7 @@ if (is_file('./install/index.php')) {
       $sql = "SELECT * FROM `".DB_USER."` WHERE (`email`='$forgot_email' OR `phone1`='$forgot_email') AND `fb`='0' LIMIT 1";
       $user = $db->customQuery($sql);
       if (sizeof($user) == 1) {
-        // สุ่มและอัปเดทรหัสผ่านใหม่
+        // สุ่มและอัปเดตรหัสผ่านใหม่
         $password = gcms::rndname(6);
         $save['password'] = md5($password.$user[0]['email']);
         $db->edit(DB_USER, $user[0]['id'], $save);

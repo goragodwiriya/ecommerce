@@ -53,7 +53,7 @@ if (gcms::isReferer()) {
       $ret['error'] = 'ID_NOT_FOUND';
     }
   } elseif ($action == 'quantity' && $order_id > 0) {
-    // อัปเดทจำนวนสินค้า
+    // อัปเดตจำนวนสินค้า
     $sql = "SELECT C.`id`,C.`module_id`,A.`stock`";
     $sql .= " FROM `".DB_CART."` AS C";
     $sql .= " INNER JOIN `".DB_PRODUCT."` AS P ON P.`id`=C.`product_id` AND P.`module_id`=C.`module_id`";
@@ -62,7 +62,7 @@ if (gcms::isReferer()) {
     $index = $db->customQuery($sql);
     if (sizeof($index) == 1) {
       $index = $index[0];
-      // อัปเดท จำนวนสินค้าที่ต้องการ มากกว่า 1
+      // อัปเดต จำนวนสินค้าที่ต้องการ มากกว่า 1
       $my_quantity = max(1, (int)$_POST['value']);
       // ตรวจสอบตะกร้าสินค้า
       include ROOT_PATH.'modules/product/loadbasket.php';
@@ -108,7 +108,7 @@ if (gcms::isReferer()) {
       }
     }
   } elseif ($_POST['updatedetail'] == 1) {
-    // อัปเดทข้อความ
+    // อัปเดตข้อความ
     $comment = $db->sql_trim_str($_POST['cart_detail']);
     $db->edit(DB_ORDERS, $_POST['order_id'], array('comment' => $comment));
     $ret['error'] = 'SAVE_COMPLETE';
@@ -154,7 +154,7 @@ if (gcms::isReferer()) {
       } elseif ($match[1] == 'deleting' && $moderator) {
         // ลบความคิดเห็น, mod หรือ เจ้าของ
         $db->delete(DB_COMMENT, $match[3]);
-        // อัปเดทจำนวนคำตอบของคำถาม
+        // อัปเดตจำนวนคำตอบของคำถาม
         $sql = "UPDATE `".DB_PRODUCT."`";
         $sql .= " SET `comments`=(";
         $sql .= "SELECT COUNT(*) FROM `".DB_COMMENT."` WHERE `index_id`='$match[2]' AND `module_id`='$index[module_id]'";

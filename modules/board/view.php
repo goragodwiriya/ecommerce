@@ -44,12 +44,12 @@
 				$moderator = $isMember && gcms::canConfig(explode(',', $index['moderator']));
 				// สามารถลบได้ (mod=ลบ,สมาชิก=แจ้งลบ)
 				$canDelete = $moderator || ($isMember && defined('DB_PM'));
-				// อัปเดทการเปิดดู
+				// อัปเดตการเปิดดู
 				if (!isset($_REQUEST['visited'])) {
 					$index['visited']++;
 					$db->edit(DB_BOARD_Q, $index['id'], array('visited' => $index['visited']));
 				}
-				// บันทึก cache หลังจากอัปเดทการเปิดดูแล้ว
+				// บันทึก cache หลังจากอัปเดตการเปิดดูแล้ว
 				$cache->save($sql, $index);
 				// breadcrumbs
 				$breadcrumb = gcms::loadtemplate($index['module'], '', 'breadcrumb');

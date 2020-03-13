@@ -214,16 +214,16 @@
 					$save['create_date'] = $mmktime;
 					$save['module_id'] = $index['module_id'];
 					$board_id = $db->add(DB_BOARD_Q, $save);
-					// อัปเดทสมาชิก
+					// อัปเดตสมาชิก
 					if ($save['member_id'] > 0) {
-						// อัปเดท post
+						// อัปเดต post
 						$sql = "UPDATE `".DB_USER."` SET `post`=`post`+1 WHERE `id`='$save[member_id]' LIMIT 1";
 						$db->query($sql);
 					}
 					$ret['error'] = 'BOARD_POST_SUCCESS';
 				}
 				if ($save['category_id'] > 0) {
-					// อัปเดทจำนวนกระทู้ และ ความคิดเห็น ในหมวด
+					// อัปเดตจำนวนกระทู้ และ ความคิดเห็น ในหมวด
 					$sql1 = "SELECT COUNT(*) FROM `".DB_BOARD_Q."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]'";
 					$sql2 = "SELECT `id` FROM `".DB_BOARD_Q."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]'";
 					$sql2 = "SELECT COUNT(*) FROM `".DB_BOARD_R."` WHERE `index_id` IN ($sql2) AND `module_id`='$index[module_id]'";

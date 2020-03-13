@@ -18,7 +18,7 @@
 				$user = $db->customQuery($sql);
 				if (sizeof($user) == 1) {
 					$user = $user[0];
-					// สุ่มและอัปเดทรหัสผ่านใหม่
+					// สุ่มและอัปเดตรหัสผ่านใหม่
 					$password = gcms::rndname(6);
 					$save['password'] = md5($password.$user['email']);
 					$db->edit(DB_USER, $user['id'], $save);

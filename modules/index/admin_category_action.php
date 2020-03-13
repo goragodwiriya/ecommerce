@@ -81,7 +81,7 @@
 						}
 					}
 				} elseif ($admin && $action == 'published' && $id != '') {
-					// อัปเดท published
+					// อัปเดต published
 					$db->query("UPDATE `".DB_CATEGORY."` SET `published`='".(int)$_POST['value']."' WHERE `id` IN ($id) AND `module_id`='$index[id]'");
 				} elseif ($action == 'changecategory') {
 					// อ่าน category ขณะเขียน

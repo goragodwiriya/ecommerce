@@ -44,9 +44,9 @@ if (gcms::isReferer()) {
       }
     }
     if (!isset($ret['error'])) {
-      // อัปเดทข้อมูล
+      // อัปเดตข้อมูล
       $db->edit(DB_USER, $user['id'], $user);
-      // อัปเดทสั่งซื้อสินค้า
+      // อัปเดตสั่งซื้อสินค้า
       define('MAIN_INIT', 'confirmorder');
       // ยืนยันการสั่งซื้อที่โมดูล
       include (ROOT_PATH."modules/$module/confirmorder.php");

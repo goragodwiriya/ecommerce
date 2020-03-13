@@ -19,7 +19,7 @@
 		}
 		if (sizeof($index) == 1) {
 			$index = $index[0];
-			// อัปเดทเปิดดู
+			// อัปเดตเปิดดู
 			$index['visited']++;
 			$db->edit(DB_GALLERY_ALBUM, $id, array('visited' => $index['visited']));
 			// breadcrumbs

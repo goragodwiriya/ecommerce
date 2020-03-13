@@ -59,7 +59,7 @@ if (MAIN_INIT == 'confirmorder' && is_array($user)) {
   $order['id'] = $db->lastId(DB_ORDERS);
   $order['order_no'] = sprintf($config['product_order_no'], $order['id']);
   $db->add(DB_ORDERS, $order);
-  // อัปเดทว่าสั่งซื้อแล้ว
+  // อัปเดตว่าสั่งซื้อแล้ว
   $sql = "UPDATE `".DB_CART."`";
   $sql .= " SET `session_id`='',`order_id`='$order[id]',`member_id`='$login_id'";
   $sql .= " WHERE (`session_id`='$session_id' OR (`member_id`=$login_id AND $login_id>0)) AND `module_id`='$index[module_id]' AND `order_id`=0";

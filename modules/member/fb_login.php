@@ -47,7 +47,7 @@
 			}
 		} elseif ($save[0]['fb'] == 1) {
 			$save = $save[0];
-			// facebook เคยเยี่ยมชมแล้ว อัปเดทการเยี่มชม
+			// facebook เคยเยี่ยมชมแล้ว อัปเดตการเยี่มชม
 			$save['visited']++;
 			$save['lastvisited'] = $mmktime;
 			$save['ip'] = gcms::getip();
@@ -60,7 +60,7 @@
 			$ret['isMember'] = 0;
 		}
 		if (is_array($save)) {
-			// อัปเดท icon สมาชิก
+			// อัปเดต icon สมาชิก
 			$data = @file_get_contents("https://graph.facebook.com/$id/picture");
 			if ($data) {
 				$f = @fopen(USERICON_FULLPATH.$save['icon'], 'wb');

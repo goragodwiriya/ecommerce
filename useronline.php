@@ -42,7 +42,7 @@ if (gcms::isReferer()) {
         $useronline[] = array('id' => $item['member_id'], 'icon' => $item['icon'], 'displayname' => $item['displayname']);
       }
     } else {
-      // ตัวเอง เก็บ id ไว้อัปเดท
+      // ตัวเอง เก็บ id ไว้อัปเดต
       $updateid = $item['id'];
       if ($item['member_id'] != $my['member_id']) {
         // login หรือ logout

@@ -198,7 +198,7 @@
 			if ($id > 0) {
 				// แก้ไขความคิดเห็น
 				$db->edit(DB_BOARD_R, $id, $post);
-				// อัปเดทคำถาม
+				// อัปเดตคำถาม
 				$q['commentator'] = $index['commentator'];
 				$q['commentator_id'] = $index['member_id'];
 				$q['comment_id'] = $id;
@@ -210,18 +210,18 @@
 				$post['index_id'] = $index['id'];
 				$post['module_id'] = $index['module_id'];
 				$id = $db->add(DB_BOARD_R, $post);
-				// อัปเดทคำถาม
+				// อัปเดตคำถาม
 				$q['commentator'] = $sender;
 				$q['commentator_id'] = $post['member_id'];
 				$q['comments'] = $index['comments'] + 1;
 				$q['comment_id'] = $id;
-				// อัปเดทสมาชิก
+				// อัปเดตสมาชิก
 				if ($post['member_id'] > 0) {
-					// อัปเดท reply
+					// อัปเดต reply
 					$db->query("UPDATE `".DB_USER."` SET `reply`=`reply`+1 WHERE `id`='$post[member_id]' LIMIT 1");
 				}
 				if ($index['category_id'] > 0) {
-					// อัปเดทจำนวนกระทู้ และ ความคิดเห็น ในหมวด
+					// อัปเดตจำนวนกระทู้ และ ความคิดเห็น ในหมวด
 					$sql1 = "SELECT COUNT(*) FROM `".DB_BOARD_Q."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]'";
 					$sql2 = "SELECT `id` FROM `".DB_BOARD_Q."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]'";
 					$sql2 = "SELECT COUNT(*) FROM `".DB_BOARD_R."` WHERE `index_id` IN ($sql2) AND `module_id`='$index[module_id]'";
@@ -231,7 +231,7 @@
 				// โพสต์เรียบร้อย
 				$ret['error'] = 'COMMENT_SUCCESS';
 			}
-			// อัปเดทคำถาม (comment ล่าสุด)
+			// อัปเดตคำถาม (comment ล่าสุด)
 			$q['comment_date'] = $mmktime;
 			$q['last_update'] = $mmktime;
 			$db->edit(DB_BOARD_Q, $index['id'], $q);

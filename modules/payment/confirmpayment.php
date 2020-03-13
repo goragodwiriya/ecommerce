@@ -38,7 +38,7 @@ if (gcms::isReferer()) {
     $a = sizeof($ordernos);
     $remain = $amount;
     if ($a > 0) {
-      // ตรวจสอบรายการที่ต้องการ และ อัปเดทจำนวนเงินที่ชำระในแต่ละรายการ
+      // ตรวจสอบรายการที่ต้องการ และ อัปเดตจำนวนเงินที่ชำระในแต่ละรายการ
       $sql = "SELECT O.`id`,O.`order_no`,O.`total`,O.`transport`,O.`discount`,O.`order_status`";
       $sql .= ",U.`fname`,U.`lname`,U.`email`,M.`owner`";
       $sql .= " FROM `".DB_ORDERS."` AS O";
@@ -105,7 +105,7 @@ if (gcms::isReferer()) {
     define('MAIN_INIT', 'confirmpayment');
     $check_stock = is_file(ROOT_PATH.'modules/product/checkstock.php');
     $order_status = 3;
-    // อัปเดท order ที่ชำระเงินแล้ว
+    // อัปเดต order ที่ชำระเงินแล้ว
     foreach ($orders AS $a => $item) {
       $save = array();
       $save['paid'] = $a == 0 ? $item['paid'] + $remain : $item['paid'];
@@ -125,7 +125,7 @@ if (gcms::isReferer()) {
         $sql .= " INNER JOIN `".DB_PRODUCT_ADDITIONAL."` AS A ON A.`id`=C.`additional_id` AND A.`product_id`=C.`product_id` AND A.`module_id`=C.`module_id`";
         $sql .= " WHERE `order_id`='$item[id]'";
         $basket = $db->customQuery($sql);
-        // อัปเดท stock
+        // อัปเดต stock
         $last_status = $item['order_status'];
         include ROOT_PATH.'modules/product/checkstock.php';
       }

@@ -165,7 +165,7 @@ INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PR
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_PICTURE_EMPTY','text','product','1','กรุณาเลือกรูปภาพของสินค้า');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_REMAIN_ITEMS','text','product','0','มีสินค้านี้คงเหลือในสต๊อกเพียง %d รายการ');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_SELECT_EXISTS','text','product','1','มีรายการนี้อยู่ก่อนแล้ว');
-INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_SORT','array','product','0','a:3:{i:0;s:36:"อัปเดทล่าสุด";i:1;s:51:"สินค้าเพิ่มล่าสุด";i:2;s:30:"รหัสสินค้า";}');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_SORT','array','product','0','a:3:{i:0;s:36:"อัปเดตล่าสุด";i:1;s:51:"สินค้าเพิ่มล่าสุด";i:2;s:30:"รหัสสินค้า";}');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_STOCK_EMPTY','text','product','1','ขออภัย สินค้านี้หมดจากสต๊อคแล้ว เราจะลบรายการนี้ออก');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('PRODUCT_TOPIC_EMPTY','text','product','1','กรุณากรอกชื่อของสินค้า');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('SAVE_AND_EMAIL_SUCCESS','text','product','1','บันทึกและส่งอีเมลเรียบร้อย');

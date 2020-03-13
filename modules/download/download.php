@@ -25,7 +25,7 @@
 			} elseif ($action == 'download') {
 				$ret['confirm'] = 'CONFIRM_DOWNLOAD';
 			} elseif ($action == 'downloading') {
-				// อัปเดทดาวน์โหลด
+				// อัปเดตดาวน์โหลด
 				$download['downloads']++;
 				$db->edit(DB_DOWNLOAD, $download['id'], array('downloads' => $download['downloads']));
 				// URL สำหรับดาวน์โหลด

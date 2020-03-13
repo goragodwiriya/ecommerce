@@ -48,12 +48,12 @@ if (defined('MAIN_INIT')) {
     if ($canview || $index['viewing'] == 1) {
       // สามารถลบได้ (mod และ เจ้าของ=ลบ,สมาชิกทั่วไป=แจ้งลบ)
       $canDelete = $moderator || ($isMember && defined('DB_PM'));
-      // อัปเดทการเปิดดู
+      // อัปเดตการเปิดดู
       if (!isset($_REQUEST['visited'])) {
         $index['visited'] ++;
         $db->edit(DB_INDEX, $index['id'], array('visited' => $index['visited']));
       }
-      // บันทึก cache หลังจากอัปเดทการเปิดดูแล้ว
+      // บันทึก cache หลังจากอัปเดตการเปิดดูแล้ว
       $cache->save($sql, $index);
       // relate
       $relate = array();

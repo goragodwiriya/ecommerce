@@ -36,7 +36,7 @@
 				$canonical = gcms::getURL($index['module']);
 				$breadcrumbs['MODULE'] = gcms::breadcrumb('', $canonical, $index['topic'], $index['topic'], $breadcrumb);
 			}
-			// อัปเดทการเปิดดู
+			// อัปเดตการเปิดดู
 			if (!isset($_REQUEST['visited'])) {
 				$index['visited']++;
 				$db->edit(DB_INDEX, $index['id'], array('visited' => $index['visited']));

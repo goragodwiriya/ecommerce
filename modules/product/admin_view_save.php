@@ -22,7 +22,7 @@ if (gcms::isReferer() && gcms::canConfig($config['product_salesman'])) {
       // ตรวจสอบค่าที่ส่งมา
       $error = false;
       $input = false;
-      // อัปเดทรายการสินค้า
+      // อัปเดตรายการสินค้า
       $cart = array();
       if (isset($_POST['cart_id'])) {
         foreach ($_POST['cart_id'] AS $k => $v) {
@@ -85,7 +85,7 @@ if (gcms::isReferer() && gcms::canConfig($config['product_salesman'])) {
         // ตรวจสอบการตัด stock สินค้า
         define('MAIN_INIT', 'admin_view_save');
         include ROOT_PATH.'modules/product/checkstock.php';
-        // อัปเดท order
+        // อัปเดต order
         $order['last_update'] = $db->sql_trim($_POST['last_update']).date(' H:i:s', $mmktime);
         $order['order_status'] = $order_status;
         $order['comment'] = $db->sql_trim_str($_POST['order_comment']);

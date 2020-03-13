@@ -38,7 +38,7 @@
 					$db->query("DELETE FROM `".DB_COMMENT."` WHERE `index_id` IN ($id) AND `module_id`='$index[id]'");
 					$db->query("DELETE FROM `".DB_INDEX."` WHERE `id` IN ($id) AND `module_id`='$index[id]'");
 					$db->query("DELETE FROM `".DB_INDEX_DETAIL."` WHERE `id` IN ($id) AND `module_id`='$index[id]'");
-					// อัปเดทจำนวนเรื่อง และ ความคิดเห็น ในหมวด
+					// อัปเดตจำนวนเรื่อง และ ความคิดเห็น ในหมวด
 					$sql1 = "SELECT COUNT(*) FROM `".DB_INDEX."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[id]' AND `index`='0'";
 					$sql2 = "SELECT `id` FROM `".DB_INDEX."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[id]' AND `index`='0'";
 					$sql2 = "SELECT COUNT(*) FROM `".DB_COMMENT."` WHERE `index_id` IN ($sql2) AND `module_id`='$index[id]'";

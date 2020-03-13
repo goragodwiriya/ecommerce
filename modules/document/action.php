@@ -77,7 +77,7 @@
 				if ($rid > 0) {
 					// ลบคำตอบ
 					$db->delete(DB_COMMENT, $rid);
-					// อัปเดทจำนวนคำตอบของคำถาม
+					// อัปเดตจำนวนคำตอบของคำถาม
 					$sql = "UPDATE `".DB_INDEX."`";
 					$sql .= " SET `comments`=(";
 					$sql .= "SELECT COUNT(*) FROM `".DB_COMMENT."` WHERE `index_id`='$qid' AND `module_id`='$index[module_id]'";
@@ -97,9 +97,9 @@
 						$ret['remove'] = "L_$qid";
 					}
 				}
-				// อัปเดทหมวดหมู่
+				// อัปเดตหมวดหมู่
 				if ($index['category_id'] > 0) {
-					// อัปเดทจำนวนเรื่อง และ ความคิดเห็น ในหมวด
+					// อัปเดตจำนวนเรื่อง และ ความคิดเห็น ในหมวด
 					$sql1 = "SELECT COUNT(*) FROM `".DB_INDEX."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]' AND `index`='0'";
 					$sql2 = "SELECT `id` FROM `".DB_INDEX."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]' AND `index`='0'";
 					$sql2 = "SELECT COUNT(*) FROM `".DB_COMMENT."` WHERE `index_id` IN ($sql2) AND `module_id`='$index[module_id]'";

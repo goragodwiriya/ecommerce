@@ -108,7 +108,7 @@ if (gcms::isReferer()) {
     if (isset($_POST['to'])) {
       $ret['to'] = rawurlencode($_POST['to']);
     }
-    // อัปเดท pagesview
+    // อัปเดต pagesview
     $counter_day = date('Y-m-d', $mmktime);
     $sql = "UPDATE `".DB_COUNTER."` SET `pages_view`=`pages_view`+1,`time`='$mmktime' WHERE `date`='$counter_day' LIMIT 1";
     $db->query($sql);

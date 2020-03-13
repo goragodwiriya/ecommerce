@@ -103,7 +103,7 @@
 					$sql .= " WHERE C.`index_id`='$qid' AND C.`module_id`='$index[module_id]'";
 					$sql .= " ORDER BY C.`id` DESC LIMIT 1";
 					$r = $db->customQuery($sql);
-					// อัปเดทคำถาม
+					// อัปเดตคำถาม
 					$sql = "UPDATE `".DB_BOARD_Q."` SET";
 					$sql .= " `comment_id`='".(int)$r[0]['id']."'";
 					$sql .= ",`commentator`='".addslashes($r[0]['displayname'])."'";
@@ -136,7 +136,7 @@
 					$ret['location'] = gcms::getURL($module);
 				}
 				if ($index['category_id'] > 0) {
-					// อัปเดทจำนวนคำตอบและคำถามที่เหลือภายในหมวด
+					// อัปเดตจำนวนคำตอบและคำถามที่เหลือภายในหมวด
 					$sql1 = "SELECT COUNT(*) FROM `".DB_BOARD_Q."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]'";
 					$sql2 = "SELECT `id` FROM `".DB_BOARD_Q."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]'";
 					$sql2 = "SELECT COUNT(*) FROM `".DB_BOARD_R."` WHERE `index_id` IN ($sql2) AND `module_id`='$index[module_id]'";

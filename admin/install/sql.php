@@ -677,7 +677,7 @@ INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LN
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LANGUAGE_VARIABLE','text','index','0','ตัวแปรภาษา');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LANGUAGES_COMMENT','text','index','0','การตั้งค่าการใช้ภาษานี้ในเว็บไซต์ (ต้องเลือกอย่างน้อย 1 รายการ)');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LANTIGUDE','text','index','0','ลองติจูด');
-INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LAST_UPDATE','text','index','0','อัปเดทล่าสุด');
+INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LAST_UPDATE','text','index','0','อัปเดตล่าสุด');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LAST_VISITED','text','index','0','เข้าระบบล่าสุด');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LATIGUDE','text','index','0','ละติจูด');
 INSERT INTO `{prefix}_language` (`key`, `type`, `owner`, `js`, `th`) VALUES ('LNG_LINK_COLOR','text','index','0','สีของลิงค์');

@@ -140,7 +140,7 @@
 						$ret['error'] = 'EDIT_SUCCESS';
 					}
 					$ret['location'] = 'back';
-					// อัปเดทจำนวนเรื่อง และ ความคิดเห็น ในหมวด
+					// อัปเดตจำนวนเรื่อง และ ความคิดเห็น ในหมวด
 					$sql1 = "SELECT COUNT(*) FROM `".DB_INDEX."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]' AND `index`='0'";
 					$sql2 = "SELECT `id` FROM `".DB_INDEX."` WHERE `category_id`=C.`category_id` AND `module_id`='$index[module_id]' AND `index`='0'";
 					$sql2 = "SELECT COUNT(*) FROM `".DB_COMMENT."` WHERE `index_id` IN ($sql2) AND `module_id`='$index[module_id]'";

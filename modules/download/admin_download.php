@@ -9,7 +9,7 @@
 		$file = $db->getRec(DB_DOWNLOAD, $_GET['id']);
 		$file_path = iconv('UTF-8', 'TIS-620', ROOT_PATH.$file['file']);
 		if ($file && is_file($file_path)) {
-			// อัปเดทดาวน์โหลด
+			// อัปเดตดาวน์โหลด
 			$db->edit(DB_DOWNLOAD, $file['id'], array('downloads' => $file['downloads'] + 1));
 			// ดาวน์โหลดไฟล์
 			header('Cache-Control: private');

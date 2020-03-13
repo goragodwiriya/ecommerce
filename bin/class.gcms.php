@@ -810,7 +810,7 @@ class gcms
               return 4;
             }
           }
-          // อัปเดทการเยี่ยมชม
+          // อัปเดตการเยี่ยมชม
           if ($session_id != $login_result['session_id']) {
             $login_result['visited'] ++;
             $userupdate = true;

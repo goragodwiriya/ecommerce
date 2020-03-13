@@ -50,7 +50,7 @@
 						}
 					}
 				}
-				// อัปเดทจำนวนรูปภาพในอัลบัม
+				// อัปเดตจำนวนรูปภาพในอัลบัม
 				$sql1 = "SELECT COUNT(*) FROM `".DB_GALLERY."` WHERE `album_id`=C.`id` AND `module_id`='$index[module_id]'";
 				$sql = "UPDATE `".DB_GALLERY_ALBUM."` AS C SET C.`count`=($sql1) WHERE C.`id`='$index[id]' AND C.`module_id`='$index[module_id]'";
 				$db->query($sql);
