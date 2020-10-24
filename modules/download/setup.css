@@ -1,0 +1,14 @@
+#tbl_download td.size {
+	color: #36F;
+	font-size: 90%;
+	text-align: center;
+}
+#tbl_download td.notfound {
+	color: #F00;
+	font-size: 90%;
+	text-align: center;
+}
+#tbl_download td.no {
+	font-size: 90%;
+	text-align: center;
+}

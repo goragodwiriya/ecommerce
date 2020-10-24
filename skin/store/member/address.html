@@ -1,0 +1,69 @@
+<form id=register_frm class="main_frm member_section" method=post action="{WEBURL}/index.php" autocomplete=off>
+	<header><h2 class=icon-address>{LNG_ADDRESS_DETAIL}</h2></header>
+	<fieldset>
+		<div class=item>
+			<div class=input-groups>
+				<div class=width50>
+					<label for=register_fname>{LNG_FNAME}</label>
+					<span class="g-input icon-user"><input type=text name=register_fname id=register_fname maxlength=50 value="{FNAME}" title="{LNG_PLEASE_FILL}" autofocus></span>
+				</div>
+				<div class=width50>
+					<label for=register_lname>{LNG_LNAME}</label>
+					<span class="g-input icon-user"><input type=text name=register_lname id=register_lname maxlength=50 value="{LNAME}" title="{LNG_PLEASE_FILL}"></span>
+				</div>
+			</div>
+		</div>
+		<div class=item>
+			<label for=register_address1>{LNG_ADDRESS} 1</label>
+			<span class="g-input icon-address"><input type=text name=register_address1 id=register_address1 maxlength=64 value="{ADDRESS1}" title="{LNG_PLEASE_FILL}"></span>
+		</div>
+		<div class=item>
+			<label for=register_address2>{LNG_ADDRESS} 2</label>
+			<span class="g-input icon-address"><input type=text name=register_address2 id=register_address2 maxlength=64 value="{ADDRESS2}" title="{LNG_PLEASE_FILL}"></span>
+		</div>
+		<div class=item>
+			<div class=input-groups>
+				<div class=width60>
+					<label for=register_provinceID>{LNG_PROVINCE}</label>
+					<span class="g-input icon-location"><select id=register_provinceID name=register_provinceID  title="{LNG_PLEASE_SELECT} {LNG_PROVINCE}">{PROVINCES}</select></span>
+				</div>
+				<div class=width60>
+					<label for=register_province>{LNG_PROVINCE}</label>
+					<span class="g-input icon-location"><input type=text name=register_province id=register_province maxlength=64 value="{PROVINCE}"  title="{LNG_PLEASE_FILL}"></span>
+				</div>
+				<div class=width40>
+					<label for=register_zipcode>{LNG_ZIPCODE}</label>
+					<span class="g-input icon-location"><input type=number id=register_zipcode name=register_zipcode value="{ZIPCODE}"  title="{LNG_PLEASE_FILL}"></span>
+				</div>
+			</div>
+		</div>
+		<div class=item>
+			<label for=register_country>{LNG_COUNTRY}</label>
+			<span class="g-input icon-world"><select id=register_country name=register_country  title="{LNG_PLEASE_SELECT}">
+				{COUNTRIES}
+			</select></span>
+		</div>
+	</fieldset>
+	<fieldset class=submit>
+		<input type=submit id=register_submit class="button large save" value="{LNG_SAVE}">
+		<input type=hidden name=register_id id=register_id value={ID}>
+	</fieldset>
+</form>
+<script>
+	$G(window).Ready(function() {
+		new GForm('register_frm', '{WEBURL}/modules/member/updateprofile.php').onsubmit(doFormSubmit);
+		var _contryChanged = function() {
+			if (this.value != 'TH') {
+				$G($E('register_provinceID').parentNode.parentNode).addClass('hidden');
+				$G($E('register_province').parentNode.parentNode).removeClass('hidden');
+			} else {
+				$G($E('register_provinceID').parentNode.parentNode).removeClass('hidden');
+				$G($E('register_province').parentNode.parentNode).addClass('hidden');
+			}
+		};
+		if ($E('register_country')) {
+			$G('register_country').addEvent('change', _contryChanged);
+			_contryChanged.call($E('register_country'));
+		}
+	});
+</script>

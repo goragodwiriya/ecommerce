@@ -1,0 +1,187 @@
+/*
+ Name: Store
+ Description: Template สำหรับ E-Commerce เริ่มต้นแบบง่ายๆ
+ Author: Goragod.com
+ Responsive
+*/
+body {
+  font-family: Prompt, Loma, Tahoma;
+  font-size: 14px;
+  color: #666;
+  line-height: 2em;
+}
+a {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.top_bar {
+  background-color: #1E1E27;
+  color: #EEE;
+}
+.top_bar .search-form > p {
+  max-width: 300px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.header {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+}
+.breadcrumbs,
+.topmenu,
+#logo {
+  font-family: Dosis, Prompt, Loma, Tahoma;
+}
+#float_cart {
+  position: relative;
+  padding-left: 3.2em;
+}
+#float_cart:before {
+  font-family: icomoon;
+  font-size: 1.4em;
+  content: '\e66b';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.footer_bg {
+  margin-top: 10px;
+  background-color: #F5F5F5;
+  color: #5C5C5C;
+  padding: 40px 10px;
+}
+.footer_bg .copy {
+  margin-top: 40px;
+  font-family: Dosis;
+}
+.footer_bg a:hover {
+  color: #000;
+}
+.bottom_menu {
+  padding: 0;
+  list-style-type: none;
+}
+.bottom_menu li {
+  display: inline-block;
+  margin: 0 0 0 20px;
+  text-shadow: 1px 1px 0 #FFF;
+}
+.bottom_menu li:first-child {
+  margin-left: 0;
+}
+.widget_share a {
+  text-shadow: 1px 1px 0 #FFF;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 50em;
+  -moz-border-radius: 50em;
+  -webkit-border-radius: 50em;
+}
+#cart_basket {
+  display: none;
+}
+#float_cart {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.topmenu > ul ul > li:hover > a {
+  background-color: #000;
+  color: #FFF;
+}
+.breadcrumbs li:before {
+  content: '/';
+  color: #CC6600;
+}
+#product-view .related,
+.homepage .thumbview {
+  text-align: center !important;
+  line-height: 3em;
+}
+#product-view .related .items,
+.homepage .items {
+  padding: 5px;
+}
+#product-view .related .figure,
+#product-view .related .topic,
+.homepage .thumbview .figure,
+.homepage .thumbview .topic {
+  display: block;
+}
+#product-view .related .items:hover,
+.homepage .items:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+.homepage h2 {
+  font-size: 2em;
+  margin: 40px 0 30px;
+}
+#GModal_modaldiv > .modaldiv {
+  padding: 10px;
+  background-color: #FFF;
+}
+dl.info {
+  background-color: #F5F5F5;
+  border: 1px dotted rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: 10px;
+}
+#login_frm {
+  display: table;
+  margin: 0 auto;
+}
+#login_frm a {
+  display: block;
+}
+.member_section {
+  padding: 0 10px;
+}
+.main_frm {
+  background-color: #F9F9F9;
+  padding: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  min-width: 300px;
+  max-width: 100%;
+}
+.main_frm header {
+  text-shadow: 1px 1px 0 #FFF;
+}
+.main_frm .links {
+  text-align: right;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 3px solid rgba(0,0,0,0.05);
+}
+.main_frm a:hover {
+  color: #000;
+}
+@media only screen and (max-width: 960px) {
+  #widget-search-form {
+    margin-left: 3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #widget-search-form {
+    margin: 0 auto;
+    display: table;
+  }
+  .header .table,
+  .header .td {
+    text-align: center !important;
+    display: block;
+    width: auto;
+  }
+}

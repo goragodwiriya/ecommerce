@@ -1,0 +1,82 @@
+<div class="gcss-wrapper">
+  <article class="order_frm bdr_content">
+    <header>
+      <h2><a href="{WEBURL}/index.php?module=editprofile&amp;tab=product">{LNG_PAYMENT_HISTORY}</a></h2>
+    </header>
+    <form method=post id=cart_frm action=index.php>
+      <table class=cart>
+        <caption>{LNG_CART} {LNG_ORDER_NO} {ORDERID}</caption>
+        <thead>
+          <tr>
+            <th>{LNG_PRODUCT_ID}</th>
+            <th>{LNG_PRODUCT_TOPIC}</th>
+            <th>{LNG_QUANTITY}</th>
+            <th>{LNG_PRICE}</th>
+            <th>{LNG_TOTAL}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {CART}
+          <tr class=right>
+            <td colspan=3>{LNG_TOTAL}</td><td class=right colspan=2>{TOTAL} {UNIT}</td>
+          </tr>
+          <tr class=right>
+            <td colspan=3>{LNG_DISCOUNT}</td><td class=right colspan=2>{DISCOUNT} {UNIT}</td>
+          </tr>
+          <tr class=right>
+            <td colspan=3>{LNG_TOTAL_AMOUNT}</td><td class=right colspan=2><span class=total>{GRANDTOTAL}</span> {UNIT}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class=shipping>
+        <caption>{LNG_PAYMENT_REGISTER_INFORMATION}</caption>
+        <tbody>
+          <tr class=bg1>
+            <td class=col1>{LNG_FNAME}</td><td class="col2 right">{FNAME} {LNAME}</td>
+          </tr>
+          <tr class=bg2>
+            <td class=col1>{LNG_ADDRESS}</td><td class="col2 right">{ADDRESS}</td>
+          </tr>
+          <tr class=bg1>
+            <td class=col1>{LNG_COUNTRY}</td><td class="col2 right">{COUNTRY}</td>
+          </tr>
+          <tr class=bg2>
+            <td class=col1>{LNG_EMAIL}</td><td class="col2 right">{EMAIL}</td>
+          </tr>
+          <tr class=bg1>
+            <td class=col1>{LNG_PHONE}</td><td class="col2 right">{PHONE}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class=payment>
+        <caption>{LNG_PAYMENT_METHOD}</caption>
+        <tbody>
+          {METHOD}
+          <tr><td colspan=2>&nbsp;</td></tr>
+          <tr>
+            <td><label for=cart_detail>{LNG_PAYMENT_DETAIL} :</label></td>
+            <td><textarea name=cart_detail id=cart_detail cols=50 rows=5>{DETAIL}</textarea></td>
+          </tr>
+          <tr class=submit>
+            <td></td>
+            <td>
+              <input class="button large cancle" type=button id=confirm_cancle value="{LNG_CANCEL_ORDER}">
+              <input class="button large ok" type=submit name=summary value="{LNG_SAVE}">
+              <input class="button large" type=button id=confirm_payment value="{LNG_PAYMENT_TITLE}">
+              <input type=hidden name=order_id id=order_id value={ID}>
+              <input type=hidden name=updatedetail value=1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <div class=warning>{LNG_PAYMENT_CONFIRM_COMMENT}</div>
+  </article>
+  <script>
+    $G(window).Ready(function () {
+      new GForm("cart_frm", "{WEBURL}/modules/product/action.php", "wait", false).onsubmit(doFormSubmit);
+      doProductCancle('confirm_cancle', 'product');
+      doConfirmPayment('confirm_payment');
+    });
+  </script>
+</div>

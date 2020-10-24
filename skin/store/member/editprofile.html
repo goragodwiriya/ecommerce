@@ -1,0 +1,62 @@
+<form id=register_frm class="main_frm member_section" method=post action="{WEBURL}/index.php" autocomplete=off>
+	<header><h2 class=icon-profile>{LNG_MEMBER_PROFILE}</h2></header>
+	<fieldset>
+		<div class=item>
+			<label for=register_email>{LNG_EMAIL}</label>
+			<span class="g-input icon-email"><input type=text name=register_email id=register_email maxlength=255 class=readonly readonly=readonly value="{EMAIL}" title="{LNG_PLEASE_FILL}"></span>
+		</div>
+		<div class=item>
+			<label for=register_phone1>{LNG_PHONE}</label>
+			<span class="g-input icon-phone"><input type=text name=register_phone1 id=register_phone1 maxlength=10 value="{PHONE1}" title="{LNG_PLEASE_FILL}" pattern="[0-9]+"></span>
+		</div>
+		<div class=item>
+			<label for=register_phone2>{LNG_PHONE}/{LNG_FAX}</label>
+			<span class="g-input icon-print"><input type=text name=register_phone2 id=register_phone2 maxlength=32 value="{PHONE2}" title="{LNG_PLEASE_FILL}"></span>
+		</div>
+		<div class=item>
+			<label for=register_displayname>{LNG_DISPLAYNAME}</label>
+			<span class="g-input icon-user"><input type=text name=register_displayname id=register_displayname maxlength=50 value="{DISPLAYNAME}" title="{LNG_DISPLAYNAME_COMMENT}" autofocus></span>
+		</div>
+		<div class=comment id=result_register_displayname>{LNG_DISPLAYNAME_COMMENT}</div>
+		<div class=item>
+			<label for=register_sex>{LNG_SEX}</label>
+			<span class="g-input icon-sex-u"><select id=register_sex name=register_sex title="{LNG_PLEASE_SELECT}">
+				<option value="">--- {LNG_PLEASE_SELECT} ---</option>
+				{SEX}
+			</select></span>
+		</div>
+		<div class=item>
+			<label for=register_birthday>{LNG_BIRTHDAY}</label>
+			<span class="g-input icon-calendar"><input type=date id=register_birthday name=register_birthday value="{BIRTHDAY}" title="{LNG_PLEASE_SELECT}"></span>
+		</div>
+		<div class=item>
+			<div class=usericon><span><img src="{WEBURL}/modules/member/usericon.php?id={ID}" alt=Usericon id=imgIcon></span></div>
+			<label for=register_usericon>{LNG_USERICON}</label>
+			<span class="g-input icon-upload"><input type=file class=g-file name=register_usericon id=register_usericon placeholder="{LNG_BROWSE_FILE}" title="{LNG_USERICON_COMMENT}" data-preview=imgIcon></span>
+		</div>
+		<div class=comment id=result_register_usericon>{LNG_USERICON_COMMENT}</div>
+		<div class=item>
+			<label for=register_website>{LNG_WEBSITE}</label>
+			<span class="g-input icon-world"><input type=url name=register_website id=register_website maxlength=255 value="{WEBSITE}" title="{LNG_WEBSITE_COMMENT}"></span>
+		</div>
+		<div class=comment id=result_register_website>{LNG_WEBSITE_COMMENT}</div>
+		<div class=submit2>
+			<labe><input type=checkbox name=register_subscrib value=1 {SUBSCRIB} title="{LNG_SUBSCRIB}">&nbsp;{LNG_SUBSCRIB}</label>
+		</div>
+	</fieldset>
+	<fieldset class=submit>
+		<input type=submit class="button large save" value="{LNG_SAVE}">
+		<input type=hidden name=register_id id=register_id value={ID}>
+	</fieldset>
+</form>
+<script>
+	$G(window).Ready(function() {
+		new GForm('register_frm', '{WEBURL}/modules/member/updateprofile.php').onsubmit(doFormSubmit);
+		new GValidator('register_displayname', 'keyup,change', checkDisplayname, '{WEBURL}/modules/member/checkdisplayname.php', null, 'register_frm');
+		$G('register_birthday').addEvent('change', function(){
+			var age = new Date().compare(this.value);
+			this.calendar.setText(this.calendar.getDateFormat('d M Y') + ' ({LNG_AGE} ' + age.year + ' {LNG_YEAR} ' + age.month + ' {LNG_MONTH} ' + age.day + ' {LNG_DAYS})');
+		});
+		new GValidator('register_phone1', 'keyup,change', checkPhone, '{WEBURL}/modules/member/checkphone.php', null, 'register_frm');
+	});
+</script>

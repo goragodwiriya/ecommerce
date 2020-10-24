@@ -1,0 +1,44 @@
+<a class=skip_content accesskey=s href=#content title="{LNG_SKIP_TO_CONTENT}"></a>
+<dl id=wait><dt></dt><dd></dd></dl>
+<header id=to-top>
+  <div class=sec_1>
+    <a href=http://www.goragod.com tabindex=1 accesskey=a><abbr title="Goragod Content Management System">GCMS</abbr></a>
+  </div>
+  <div class=sec_2 id=change_display>
+    <span class=label>{LNG_CHANGE_DISPLAY}</span>
+    <a class=small title="{LNG_CHANGE_FONT_SMALL}" tabindex=1><span>A</span></a>
+    <a class=normal title="{LNG_CHANGE_FONT_NORMAL}" tabindex=1><span>A</span></a>
+    <a class=large title="{LNG_CHANGE_FONT_LARGE}" tabindex=1><span>A</span></a>
+    <span class=label>{LNG_CHANGE_LANGUAGE}</span>
+    {LANGUAGES}
+  </div>
+  <div class=sec_3>
+    <span class=label>{LNG_WELCOME},</span>
+    <a id=gdpanel-arrow class=gdpanel-arrow><span class="icon-user loginname">{LOGINNAME}</span></a>
+    <ul id=gdpanel class=gdpanel>
+      <li><a class=icon-profile href="{WEBURL}/admin/index.php?module=editprofile&amp;id={LOGINID}" title="{LNG_MEMBER_EDIT_TITLE}" tabindex=1 accesskey=w>{LNG_MEMBER_EDIT_TITLE}</a></li>
+      <li><a class=icon-preview href="{WEBURL}/index.php" target=preview accesskey=p title="{LNG_PREVIEW}" tabindex=1>{LNG_HOME}</a></li>
+      <li><a class=icon-signout href="{URLQUERY?action=logout}" accesskey=l title="{LNG_LOGOUT}" tabindex=1>{LNG_LOGOUT}</a></li>
+    </ul>
+  </div>
+</header>
+<div id=scroll-to>
+  <nav id=topmenu class="topmenu responsive clear">
+    <ul>{MENUS}</ul>
+  </nav>
+</div>
+<div id=skip class=clear>{CONTENT}</div>
+<footer id=to-bottom>
+  <p class=copy>
+    Copyright 2014,
+    <a href=http://gcms.in.th title="Goragod Content Management System main site">
+      <abbr title="Goragod Content Management System">GCMS</abbr>
+      V {VERSION}</a> All Rights Reserved Powered by <a href=http://www.goragod.com title="Web design by AJAX and PHP">Goragod.com
+    </a>
+  </p>
+</footer>
+<a href=#scroll-to class=scroller>^</a>
+<script>
+  new GDPanel('gdpanel-arrow', 'gdpanel');
+  new GDDMenu('topmenu', doMenuClick);
+</script>

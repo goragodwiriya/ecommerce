@@ -1,0 +1,12 @@
+.map-demo {
+	overflow: hidden;
+	background-color: #F9F9F9;
+	text-align: center;
+	padding: 10px;
+}
+#map_canvas {
+	margin: 20px auto;
+}
+#map_canvas img, .gmnoprint img {
+	max-width: none;
+}

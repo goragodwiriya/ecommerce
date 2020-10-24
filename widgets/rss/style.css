@@ -1,0 +1,77 @@
+/* rss */
+.rss_widget {
+    border: 1px solid #BCC2B7;
+    position: relative;
+}
+.rss_widget .rsstab_loading {
+    background-color: #F00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    font-size: 1px;
+    display: none;
+    -moz-animation: rainbow 2s infinite alternate linear;
+    -ms-animation: rainbow 2s infinite alternate linear;
+    -o-animation: rainbow 2s infinite alternate linear;
+    -webkit-animation: rainbow 2s infinite alternate linear;
+    animation: rainbow 2s infinite alternate linear;
+    border: none;
+}
+.rss_widget .rss_div, .rss_widget .rss_tab {
+    width: 100%;
+    display: table;
+}
+.rss_widget td {
+    vertical-align: top;
+}
+.rss_widget .rss_tab ul {
+    padding: 0;
+    margin: 0;
+}
+.rss_widget .rss_tab li {
+    list-style-type: none;
+    display: inline;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+}
+.rss_widget .rss_tab a {
+    background-color: #f4f2ea;
+    padding: 0 10px;
+    font-weight: bold;
+    border-style: none solid solid none;
+    border-width: 1px;
+    border-color: #bcc2b7;
+    height: 20px;
+    float: left;
+}
+.rss_widget .rss_tab a.select {
+    background-color: transparent;
+    border-style: none solid none none;
+}
+.rss_widget .rss_tab a.last {
+    border-right-style: none;
+}
+.rss_widget .table_rsstab_class img, table.table_rss_class img {
+    margin-right: 5px;
+    float: left;
+}
+.rss_widget .rss_row a, .rss_widget .rss_div a, table.table_rss_class a {
+    font-weight: bold;
+    display: block;
+}
+.rss_widget .rss_row, .rss_widget .table_rsstab_class, table.table_rss_class {
+    width: 100%;
+}
+.rss_widget a.icon-rss:before {
+    color: #CC6600;
+}
+@media only screen and (max-width: 480px) {
+    .table_rsstab_class, .table_rsstab_class tbody, .table_rsstab_class tr, .table_rsstab_class td {
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+}

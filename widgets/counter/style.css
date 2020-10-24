@@ -1,0 +1,36 @@
+#counter-box {
+	display: table;
+	width: 100%;
+}
+#counter-box  .counter-detail {
+	display: table-row;
+}
+#counter-box  .counter-detail > span {
+	display: table-cell;
+	padding: 3px 5px;
+	text-align: center;
+}
+#counter-box  .counter-detail > .col {
+	background-color: #F9F9F9;
+	background-color: rgba(0,0,0,0.02);
+	text-align: left;
+	border-width: 1px;
+	border-color: #FFF;
+	border-color: rgba(255,255,255,0.9);
+	border-style: none none solid none;
+}
+#counter-online {
+	width: 100%;
+	display: table;
+	list-style: none;
+	padding: 0;
+}
+#counter-online > li {
+	width: 50%;
+	float: left;
+	text-align: center;
+	padding: 5px;
+}
+#counter-online > li > span {
+	display: block;
+}

@@ -1,0 +1,58 @@
+<div class=bdr_content>
+	<header>
+		<h2>{LNG_BOARD_NEW}</h2>
+		<nav class=breadcrumbs>
+			<ul>
+				{BREADCRUMS}
+				<li><span>{LNG_BOARD_NEW}</span></li>
+			</ul>
+		</nav>
+	</header>
+	<div class=introduction>{LNG_BOARD_NEWTOPIC_INTRODUCTION}</div>
+	<form id=board-form class=mainform method=post action="{WEBURL}/index.php" autocomplete=off>
+		<fieldset>
+			<legend><span class=icon-newtopic>{LNG_BOARD_NEWTOPIC_SUBTITLE}</span></legend>
+			<div class=item>
+				<label for=board_topic>{LNG_BOARD_TOPIC}</label>
+				<label class="g-input icon-edit"><input type=text name=board_topic id=board_topic maxlength=64 placeholder="{LNG_BOARD_TOPIC_TITLE}" autofocus></label>
+			</div>
+			<div class=item>
+				<label for=board_category>{LNG_CATEGORY}</label>
+				<span class="g-input icon-category"><select id=board_category name=board_category title="{LNG_CATEGORY_SELECT}">{CATEGORIES}</select></span>
+			</div>
+			<div class=item>
+				<label for=board_detail>{LNG_DETAIL}</label>
+				<span class="g-input icon-file"><textarea id=board_detail name=board_detail rows=10 placeholder="{LNG_DETAIL_COMMENT}"></textarea></span>
+			</div>
+			<UPLOAD>
+				<div class=item>
+					<label class="g-input icon-upload"><input type=file class=g-file id=board_picture name=board_picture placeholder="{LNG_BROWSE_FILE}" title="{LNG_FILE_UPLOAD_COMMENT}"></label>
+					<div class=comment id=result_board_picture>{LNG_FILE_UPLOAD_COMMENT}</div>
+				</div>
+			</UPLOAD>
+			<div class=item>
+				<div class="g-input antispam">
+					<span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=Antispam></span>
+					<input type=text id=board_antispam name=board_antispam maxlength=4 value="{ANTISPAMVAL}" placeholder="{LNG_ANTISPAM_COMMENT}">
+				</div>
+			</div>
+			<MEMBER>
+				<div class=item>
+					<div class=input-groups>
+						<label class="width50 g-input icon-email"><input type=text id=board_email name=board_email maxlength=255 value="{LOGIN_EMAIL}" placeholder="{LNG_EMAIL}" data-result=board_user></label>
+						<label class="width50 g-input icon-password"><input type=password id=board_password name=board_password maxlength=20 value="{LOGIN_PASSWORD}" placeholder="{LNG_PASSWORD}" data-result=board_user></label>
+					</div>
+				</div>
+			</MEMBER>
+		</fieldset>
+		<fieldset class=submit>
+			<input type=submit class="button large save" value="{LNG_BOARD_NEWTOPIC_SUBMIT}">
+			<input type=hidden name=board_antispamid value={ANTISPAM}>
+			<input type=hidden name=board_id value=0>
+			<input type=hidden name=module_id value={MODULEID}>
+		</fieldset>
+	</form>
+</div>
+<script>
+	inintDocumentEditor('board-form', 'board_detail', WEB_URL + 'modules/board/post.php');
+</script>

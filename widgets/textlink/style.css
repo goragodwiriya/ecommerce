@@ -1,0 +1,185 @@
+/* gproductslide */
+.gproductslide {
+  position: relative;
+}
+.gproductslide:hover .btnnav {
+  color: rgba(0,0,0,0.2);
+  text-shadow: -1px -1px 0 #FFF;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.03);
+}
+.gproductslide .btnnav {
+  font-size: 2em;
+}
+.gproductslide .button_container_gproductslide {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5em;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.gproductslide .button_gproductslide {
+  margin: 0;
+}
+.gproductslide .button_gproductslide > a {
+  position: relative;
+  display: inline-block;
+  background-color: rgba(255,0,0,0.3);
+  cursor: pointer;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  font-family: Arial;
+  margin: 0 5px;
+  -moz-border-radius: 50em;
+  -webkit-border-radius: 50em;
+  border-radius: 50em;
+}
+.gproductslide figure {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  list-style-type: none;
+}
+.gproductslide figcaption {
+  padding: 0.5em;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  color: #FFF;
+  left: 0;
+  bottom: -3em;
+  line-height: 2em;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.gproductslide:hover figcaption {
+  bottom: 0;
+}
+.gproductslide figcaption a {
+  color: #FFF;
+}
+.gproductslide a.current {
+  background-color: rgba(255,0,0,0.8);
+}
+.gproductslide .button_gproductslide > a > span {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -25px;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.gproductslide .button_gproductslide span:after {
+  content: '';
+  position: absolute;
+  border-width: 6px;
+  border-color: rgba(0,0,0,0.5);
+  border-style: solid solid none solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  bottom: -7px;
+  margin-left: -6px;
+  left: 50%;
+}
+.gproductslide .button_gproductslide > a:hover > span {
+  display: block;
+  -webkit-animation: fadein 1s ease both;
+  -moz-animation: fadein 1s ease both;
+  -ms-animation: fadein 1s ease both;
+  animation: fadein 1s ease both;
+}
+.gproductslide .btnnav {
+  cursor: pointer;
+  font-family: 'Loma';
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  z-index: 2;
+  color: rgba(255,255,255,0.1);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  border-radius: 50em;
+  -moz-border-radius: 50em;
+  -webkit-border-radius: 50em;
+}
+.gproductslide .btnnav.prev,
+.gproductslide .btnnav.next {
+  top: 50%;
+  margin-top: -1.5em;
+}
+.gproductslide .btnnav.prev {
+  left: 0.5em;
+}
+.gproductslide .btnnav.next {
+  right: 0.5em;
+}
+.gproductslide .btnnav.next:after {
+  content: '>';
+}
+.gproductslide .btnnav.prev:after {
+  content: '<';
+}
+@keyframes fadein {
+  0% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
+@-moz-keyframes fadein {
+  0% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
+@-ms-keyframes fadein {
+  0% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
+@-webkit-keyframes fadein {
+  0% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
+@keyframes fadeout {
+  0% {opacity: 1.0;}
+  100% {opacity: 0.0;}
+}
+@-moz-keyframes fadeout {
+  0% {opacity: 1.0;}
+  100% {opacity: 0.0;}
+}
+@-ms-keyframes fadeout {
+  0% {opacity: 1.0;}
+  100% {opacity: 0.0;}
+}
+@-webkit-keyframes fadeout {
+  0% {opacity: 1.0;}
+  100% {opacity: 0.0;}
+}
+.fadein {
+  -webkit-animation: fadein 1s ease both;
+  -moz-animation: fadein 1s ease both;
+  -ms-animation: fadein 1s ease both;
+  animation: fadein 1s ease both;
+}
+.fadeout {
+  -webkit-animation: fadeout 1s ease both;
+  -moz-animation: fadeout 1s ease both;
+  -ms-animation: fadeout 1s ease both;
+  animation: fadeout 1s ease both;
+}

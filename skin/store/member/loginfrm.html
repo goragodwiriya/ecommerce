@@ -1,0 +1,27 @@
+<div class="gcss-wrapper">
+  <form id=login_frm class=main_frm method=post action="{WEBURL}/index.php" autocomplete=off>
+    <header class="center"><h2>{LNG_LOGIN_TITLE}</h2></header>
+    <p class="title center">{WEBTITLE}</p>
+    <p class="subtitle center">{SUBTITLE}</p>
+    <p><label class="g-input icon-email"><input type=text name=login_email id=login_email maxlength=255 value="{EMAIL}" placeholder="{LNG_EMAIL}"></label></p>
+    <p><label class="g-input icon-password"><input type=password name=login_password id=login_password maxlength=20 value="{PASSWORD}" placeholder="{LNG_PASSWORD}"></label></p>
+    <p class=right>
+      <input type=checkbox name=login_remember id=login_remember value=1 title="{LNG_LOGIN_REMEMBER}" {REMEMBER}>
+      <label for=login_remember>{LNG_LOGIN_REMEMBER}</label>
+    </p>
+    <p class="{FACEBOOK} center"><a id=login_fb class="blue button">{LNG_FACEBOOK_LOGIN}</a></p>
+    <p class=right>
+      <input type=button class="button register" id=register value="{LNG_REGISTER}" title="{LNG_REGISTER_TITLE}">
+      <input type=button class="button forgot" id=forgot value="{LNG_FORGOT}" title="{LNG_FORGOT_TITLE}">
+      <input type=submit class="button login" id=login_submit value="{LNG_LOGIN}" title="{LNG_LOGIN_SUBMIT_TITLE}">
+    </p>
+  </form>
+</div>
+<script>
+  $G(window).Ready(function () {
+    new GForm('login_frm', '{WEBURL}/modules/member/chklogin.php').onsubmit(doLoginSubmit);
+    callClick('register', doMember);
+    callClick('forgot', doMember);
+    callClick('login_fb', fbLogin);
+  });
+</script>

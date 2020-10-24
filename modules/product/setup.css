@@ -1,0 +1,51 @@
+label:before {
+  float: right;
+  font-family: Arial;
+  font-size: 80%;
+  padding: 3px 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-left: 5px;
+  line-height: 1;
+}
+label.new:before {
+  content: 'new';
+  color: #C60;
+  background-color: rgba(204,102,0,0.1);
+}
+label.hot:before {
+  content: 'hot';
+  color: #008000;
+  background-color: rgba(0,128,0,0.1);
+}
+label.recommend:before {
+  content: 'recommend';
+  color: #008080;
+  background-color: rgba(0,128,128,0.1);
+}
+#product_upload form {
+  padding: 0 5px;
+  margin: 5px;
+  background-color: #F9F9F9;
+  border: 1px solid #F5F5F5;
+}
+#product_upload span.wait {
+  background: url(img/uploading.gif) 0 50% no-repeat;
+  padding-left: 70px;
+  display: none;
+  margin-left: 5px;
+}
+#product_upload span.wait.show {
+  display: inline;
+}
+#product_upload .picture {
+  margin-right: 5px;
+  padding: 2px;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+}
+#product_upload td {
+  vertical-align: top;
+  border: none;
+}

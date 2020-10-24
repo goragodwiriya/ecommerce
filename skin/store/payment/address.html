@@ -1,0 +1,57 @@
+<div class="gcss-wrapper">
+  <article class="bdr_content payment_frm clear">
+    <header><h2 class=icon-shipping>{LNG_PAYMENT_REGISTER}</h2></header>
+    <form id=product_profile_frm method=post action=index.php>
+      <fieldset>
+        <legend><span>{LNG_PAYMENT_REGISTER_INFORMATION}</span></legend>
+        <div class=item>
+          <label for=product_fname>{LNG_FNAME}</label>
+          <span class="g-input icon-customer"><input type=text name=product_fname id=product_fname maxlength=50 value="{FNAME}" title="{LNG_PLEASE_FILL}" autofocus data-result=address_result></span>
+        </div >
+        <div class=item>
+          <label for=product_lname>{LNG_LNAME}</label>
+          <span class="g-input icon-customer"><input type=text name=product_lname id=product_lname maxlength=50 value="{LNAME}" title="{LNG_PLEASE_FILL}" data-result=address_result></span>
+        </div >
+        <div class=item>
+          <label for=product_phone1>{LNG_PHONE}</label>
+          <span class="g-input icon-phone"><input type=text name=product_phone1 id=product_phone1 maxlength=32 value="{PHONE1}"  title="{LNG_PLEASE_FILL}" data-result=address_result></span>
+        </div >
+        <div class=item>
+          <label for=product_phone2>{LNG_PHONE}/{LNG_FAX}</label>
+          <span class="g-input icon-print"><input type=text name=product_phone2 id=product_phone2 maxlength=32 value="{PHONE2}"  title="{LNG_PLEASE_FILL}"></span>
+        </div >
+        <div class=item>
+          <label for=product_address1>{LNG_ADDRESS}</label>
+          <span class="g-input icon-address"><input type=text name=product_address1 id=product_address1 maxlength=64 value="{ADDRESS1}" title="{LNG_PLEASE_FILL}" data-result=address_result></span>
+        </div >
+        <div class=item>
+          <label for=product_address2>{LNG_STREET_ADDRESS}</label>
+          <span class="g-input icon-location"><input type=text name=product_address2 id=product_address2 maxlength=64 value="{ADDRESS2}" title="{LNG_PLEASE_FILL}"></span>
+        </div >
+        <div class=item>
+          <label for=product_province>{LNG_PROVINCE}</label>
+          <span class="g-input icon-location"><input type=text name=product_province id=product_province maxlength=64 value="{PROVINCE}"  title="{LNG_PLEASE_FILL}" data-result=address_result></span>
+        </div >
+        <div class=item>
+          <label for=product_zipcode>{LNG_ZIPCODE}</label>
+          <span class="g-input icon-location"><input type=number id=product_zipcode name=product_zipcode value="{ZIPCODE}"  title="{LNG_PLEASE_FILL}" data-result=address_result></span>
+        </div >
+        <div class=item>
+          <label for=product_country>{LNG_COUNTRY}</label>
+          <span class="g-input icon-world"><select name=product_country id=product_country title="{LNG_PLEASE_SELECT}">{COUNTRIES}</select></span>
+        </div >
+        <div class=comment id=address_result>{LNG_CONFIRM_YOUR_ADDRESS_COMMENT}</div >
+      </fieldset>
+      <fieldset class="submit right">
+        <input type=submit class="button large ok" value="{LNG_PAYMENT_CONFIRM}">
+        <input type=hidden name=module value={MODULE}>
+      </fieldset>
+    </form>
+    <div class=message>{LNG_PAYMENT_REGISTER_INFORMATION_COMMENT}</div>
+  </article>
+  <script>
+    $G(window).Ready(function () {
+      new GForm("product_profile_frm", "{WEBURL}/modules/payment/address_save.php").onsubmit(doFormSubmit);
+    });
+  </script>
+</div>

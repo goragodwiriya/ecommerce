@@ -1,0 +1,22 @@
+<div class="gcss-wrapper">
+  <div class="bdr_content">
+    <nav class=breadcrumbs>
+      <ul>{BREADCRUMS}</ul>
+    </nav>
+    <div id=document-search class=body>
+      <form id=search-form class=search-form method=get action="{WEBURL}/index.php">
+        <p>
+          <label><input type=text name=q id=search-input value="{SEARCH}" size=50 placeholder="{LNG_SEARCH}" title="{LNG_SEARCH_TITLE}"></label>
+          <label><button type=submit class=icon-search title="{LNG_SEARCH}"></button></label>
+        </p>
+        <input type=hidden name=module id=search-module value=search>
+      </form>
+      <div id=search-result>{RESULT}</div>
+      <div id=search-list>{LIST}</div>
+      <div class=splitpage>{SPLITPAGE}</div>
+    </div>
+  </div>
+</div>
+<script>
+  inintSearch('search-form', 'search-input', 'search-module');
+</script>

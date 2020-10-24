@@ -1,0 +1,52 @@
+<div class=breadcrumbs>
+  <ul>
+    <li><a class=icon-users href="index.php?module=member">{LNG_USERS}</a></li>
+    <li><span>{LNG_REGISTER}</span></li>
+  </ul>
+</div>
+<section>
+  <header><h1 class=icon-register>{LNG_REGISTER_TITLE}</h1></header>
+  <form id=setup_frm class=setup_frm method=post action=index.php autocomplete=off>
+    <fieldset>
+      <legend><span>{LNG_EMAIL}</span></legend>
+      <div class=item>
+        <div>
+          <label for=register_email>{LNG_EMAIL}</label>
+          <span class="g-input icon-email"><input {ADMIN} type=email id=register_email name=register_email maxlength=255 value="{EMAIL}" title="{LNG_REGISTER_EMAIL_COMMENT}"></span>
+        </div>
+        <div class=comment id=result_register_email>{LNG_REGISTER_EMAIL_COMMENT}</div>
+      </div>
+      <div class=item>
+        <div class=input-groups>
+          <div class=width50>
+            <label for=register_password>{LNG_PASSWORD}</label>
+            <span class="g-input icon-password"><input type=password id=register_password name=register_password maxlength=20 title="{LNG_PASSWORD_COMMENT}"></span>
+            <div class=comment id=result_register_password>{LNG_PASSWORD_COMMENT}</div>
+          </div>
+          <div class=width50>
+            <label for=register_repassword>{LNG_REPASSWORD}</label>
+            <span class="g-input icon-password"><input type=password id=register_repassword name=register_repassword maxlength=20 title="{LNG_REPASSWORD_COMMENT}"></span>
+            <div class=comment id=result_register_repassword>{LNG_REPASSWORD_COMMENT}</div>
+          </div>
+        </div>
+      </div>
+      <div class=item>
+        <div>
+          <label for=register_status>{LNG_MEMBER_STATUS}</label>
+          <span class="g-input icon-star0"><select {ADMIN} name=register_status id=register_status title="{LNG_REGISTER_STATUS_COMMENT}">{STATUS}</select></span>
+        </div>
+        <div class=comment id=result_register_status>{LNG_REGISTER_STATUS_COMMENT}</div>
+      </div>
+    </fieldset>
+    <fieldset class=submit>
+      <input type=submit class="button large save" value="{LNG_REGISTER_SUBMIT}">
+      <input type=hidden name=register_id id=register_id value=0>
+    </fieldset>
+  </form>
+</section>
+<script>
+  new GForm('setup_frm', 'newregister.php').onsubmit(doFormSubmit);
+  new GValidator('register_email', 'keyup,change', checkEmail, 'checkemail.php', null, 'setup_frm');
+  new GValidator('register_password', 'keyup,change', checkPassword);
+  new GValidator('register_repassword', 'keyup,change', checkPassword);
+</script>

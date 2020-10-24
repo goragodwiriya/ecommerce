@@ -1,0 +1,10 @@
+<form id=widget-search-form class="search-form border-box" method=get action="{WEBURL}/index.php">
+  <p>
+    <label><input type=text name=q id=widget-search-input value="{SEARCH}" placeholder="{LNG_SEARCH}" title="{LNG_SEARCH_TITLE}"></label>
+    <label><button type=submit class=icon-search title="{LNG_SEARCH}"></button></label>
+    <input type=hidden name=module id=widget-search-module value=search>
+  </p>
+</form>
+<script>
+  inintSearch('widget-search-form', 'widget-search-input', 'widget-search-module');
+</script>

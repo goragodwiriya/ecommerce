@@ -1,0 +1,13 @@
+<div class="gcss-wrapper">
+  <form id=login_frm class=main_frm method=post action="{WEBURL}/index.php" autocomplete=off>
+    <header class="center"><h2>{LNG_WELCOME}</h2></header>
+    <p class="center"><img id=usericon src="{WEBURL}/modules/member/usericon.php?id={ID}" alt=usericon class=circle></p>
+    <p class="center"><span class="status{STATUS}">{DISPLAYNAME}</span></p>
+    <p class="links">
+      <a class="icon-user" href="{WEBURL}/index.php?module=editprofile">{LNG_MEMBER_EDIT_TITLE}</a>
+      <a class="icon-payment" href="{WEBURL}/index.php?module=editprofile&amp;tab=product">{LNG_PAYMENT_HISTORY}</a>
+      <a class="{ADMIN}" href={WEBURL}/admin/index.php><span class="icon-config">{LNG_ADMIN_TITLE}</span></a>
+      <a class="icon-signout" href="?action=logout" title="{LNG_LOGOUT_TITLE}">{LNG_LOGOUT}</a>
+    </p>
+  </form>
+</div>

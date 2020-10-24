@@ -1,0 +1,48 @@
+<div class=bdr_content>
+	<header>
+		<h2>{LNG_EDIT_TOPIC}</h2>
+		<nav class=breadcrumbs>
+			<ul>
+				{BREADCRUMS}
+				<li><a href="{WEBURL}/index.php?module={MODULE}&amp;wbid={QID}" title="{TOPIC}"><span>{TOPIC-50}</span></a></li>
+			</ul>
+		</nav>
+	</header>
+	<form id=board-form class=mainform method=post action="{WEBURL}/index.php" autocomplete=off>
+		<fieldset>
+			<div class=item>
+				<label for=board_topic>{LNG_BOARD_TOPIC}</label>
+				<label class="g-input icon-edit"><input type=text name=board_topic id=board_topic maxlength=64 placeholder="{LNG_BOARD_TOPIC_TITLE}" value="{TOPIC}" autofocus></label>
+			</div>
+			<div class=item>
+				<label for=board_category>{LNG_CATEGORY}</label>
+				<span class="g-input icon-category"><select id=board_category name=board_category title="{LNG_CATEGORY_SELECT}">{CATEGORIES}</select></span>
+			</div>
+			<div class=item>
+				<label for=board_detail>{LNG_DETAIL}</label>
+				<span class="g-input icon-file"><textarea id=board_detail name=board_detail rows=10 placeholder="{LNG_DETAIL_COMMENT}">{DETAIL}</textarea></span>
+			</div>
+			<UPLOAD>
+				<div class=item>
+					<label class="g-input icon-upload"><input type=file class=g-file id=board_picture name=board_picture placeholder="{LNG_BROWSE_FILE}" title="{LNG_FILE_UPLOAD_COMMENT}"></label>
+					<div class=comment id=result_board_picture>{LNG_FILE_UPLOAD_COMMENT}</div>
+				</div>
+			</UPLOAD>
+			<div class=item>
+				<div class="g-input antispam">
+					<span><img src="{WEBURL}/antispamimage.php?id={ANTISPAM}" alt=Antispam></span>
+					<input type=text id=board_antispam name=board_antispam maxlength=4 value="{ANTISPAMVAL}" placeholder="{LNG_ANTISPAM_COMMENT}">
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class=submit>
+			<input type=submit class="button large save" value="{LNG_SAVE}">
+			<input type=hidden name=board_antispamid value={ANTISPAM}>
+			<input type=hidden name=board_id value={QID}>
+			<input type=hidden name=module_id value={MODULEID}>
+		</fieldset>
+	</form>
+</div>
+<script>
+	inintDocumentEditor('board-form', 'board_detail', WEB_URL + 'modules/board/post.php');
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang=th dir=ltr>
+	<head>
+		<title>{TITLE}</title>
+		<meta charset=utf-8>
+		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name=description content="{WEBDESCRIPTION}">
+		<link rel=stylesheet href="{WEBURL}/skin/gcss.css">
+		<link rel=stylesheet href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz'>
+		<!--[if lt IE 9]>
+		<script src={WEBURL}/js/html5.js></script>
+		<![endif]-->
+		<style>
+			html, body {
+				height: 100%;
+				min-height: 100%;
+				text-align: center;
+			}
+			body {
+				background: #FFF;
+				font-size: 14px;
+			}
+			h1, .msg {
+    			text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+    			font-family: 'Yanone Kaffeesatz', sans-serif;
+			}
+			h1 {
+				display: block;
+				font-size: 5em;
+				margin-top: 50px;
+			}
+			.msg {
+				font-size: 3em;
+				padding: 30px 10px;
+				background-color: #0049A5;
+				color: #FFF;
+				margin-bottom: 10px;
+			}
+			.button {
+				font-size: 2em;
+				font-family: 'Yanone Kaffeesatz', sans-serif;
+				position: relative;
+			}
+			footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				padding: 10px;
+				font-size: 1em;
+				background-color: #000;
+				color: #FFF;
+			}
+			h1, p {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			@media only screen and (max-height: 418px) {
+				footer {
+					margin-top: 50px;
+					position: static;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header><h1>{WEBTITLE}</h1></header>
+		<p class=msg>{TITLE}</p>
+		<p>{CONTENT}</p>
+		<p class=pretty><a class="button large maroon" href={WEBURL}>Go to main site.</a></p>
+		<footer>
+			<p>Copyright &copy; 2014 <a href="{WEBURL}">{WEBTITLE}</a> GCMS Version {VERSION} designed by <a href="http://www.goragod.com">Goragod.com</a></p>
+		</footer>
+	</body>
+</html>
